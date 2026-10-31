@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriCall Real-Time Dashboard</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        .dashboard {
+            width: 100%;
+            max-width: 800px;
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+        .gauge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        .gauge-value {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #10b981; /* Green initially */
+        }
+        .escalated {
+            color: #ef4444 !important; /* Red when escalated */
+        }
+        .alert-card {
+            display: none;
+            background: #ef4444;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .metric-box {
+            background: #334155;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>VeriCall Dashboard</h1>
+        
+        <div class="alert-card" id="alertCard">
+            ⚠️ IMPERSONATION RISK DETECTED — ESCALATING TO STEP-UP VERIFICATION
+        </div>
+        
+        <div class="gauge-container">
+            <div>Call Risk Score</div>
+            <div class="gauge-value" id="riskScore">0.00</div>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-box">
+                <div>Raw Spoof LLR</div>
+                <div id="llrSpoof" style="font-size: 1.5rem; font-weight: bold;">0.00</div>
+            </div>
+            <div class="metric-box">
+                <div>CUSUM Change Point</div>
+                <div id="cusumScore" style="font-size: 1.5rem; font-weight: bold;">0.00</div>
+            </div>
+        </div>
+        
+        <button id="startCall" style="margin-top: 2rem; padding: 0.5rem 1rem; font-size: 1rem; border-radius: 6px; border: none; background: #38bdf8; color: white; cursor: pointer;">
+            Start Mock Call
+        </button>
+    </div>
+
+    <script>
+        const riskScoreEl = document.getElementById('riskScore');
+        const llrSpoofEl = document.getElementById('llrSpoof');
+        const cusumScoreEl = document.getElementById('cusumScore');
+        const alertCardEl = document.getElementById('alertCard');
+        const startBtn = document.getElementById('startCall');
+        
+        let ws;
+        
+        startBtn.addEventListener('click', () => {
+            if (ws) return;
+            
+            const callId = "call_" + Math.floor(Math.random() * 10000);
+            ws = new WebSocket(`ws://localhost:8001/ws/${callId}`);
+            
+            ws.onopen = () => {
+                startBtn.textContent = "Call in Progress...";
+                startBtn.style.background = "#10b981";
+                
+                // Simulate sending audio (just sending zeros)
+                setInterval(() => {
+                    // Send 0.5s of audio (16000 * 0.5 = 8000 samples)
+                    const fakeAudio = new Float32Array(8000);
+                    // Add some noise to make it realistic for testing
+                    for(let i=0; i<8000; i++) fakeAudio[i] = (Math.random() - 0.5) * 0.1;
+                    ws.send(fakeAudio.buffer);
+                }, 500);
+            };
+            
+            ws.onmessage = (event) => {
+                const state = JSON.parse(event.data);
+                
+                // Update UI
+                riskScoreEl.textContent = state.risk_score.toFixed(2);
+                llrSpoofEl.textContent = state.llr_spoof.toFixed(2);
+                cusumScoreEl.textContent = state.cusum_score.toFixed(2);
+                
+                if (state.is_escalated) {
+                    riskScoreEl.classList.add('escalated');
+                    alertCardEl.style.display = 'block';
+                } else {
+                    riskScoreEl.classList.remove('escalated');
+                    alertCardEl.style.display = 'none';
+                }
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1291 @@
+{
+  "bonafide": [
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 32.745,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 27.165,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 31.445,
+      "changes": [
+        17.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 32.485,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 32.105,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 33.755,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 30.575,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 30.635,
+      "changes": [
+        18.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 27.755,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 32.635,
+      "changes": [
+        12.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 33.305,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 19.0,
+      "duration": 26.555,
+      "changes": [
+        7.5,
+        15.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 20.865,
+      "changes": [
+        5.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 20.005,
+      "changes": [
+        5.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 21.105,
+      "changes": [
+        17.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 6.5,
+      "duration": 22.855,
+      "changes": [
+        15.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.5,
+      "duration": 21.735,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 14.5,
+      "duration": 20.335,
+      "changes": [
+        9.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 15.5,
+      "duration": 20.455,
+      "changes": [
+        4.5,
+        13.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 20.985,
+      "changes": [
+        5.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 10.0,
+      "duration": 22.965,
+      "changes": [
+        5.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 23.655,
+      "changes": [
+        11.0,
+        19.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 16.0,
+      "duration": 25.485,
+      "changes": [
+        11.0,
+        22.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 25.0,
+      "duration": 29.685,
+      "changes": [
+        10.5,
+        18.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 25.905,
+      "changes": [
+        6.0,
+        19.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 23.645,
+      "changes": []
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 23.635,
+      "changes": [
+        14.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 20.0,
+      "duration": 23.925,
+      "changes": [
+        6.0,
+        14.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 19.5,
+      "duration": 28.145,
+      "changes": [
+        13.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 19.0,
+      "duration": 24.175,
+      "changes": [
+        5.5,
+        15.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 17.0,
+      "duration": 26.625,
+      "changes": [
+        5.5,
+        15.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 6.5,
+      "duration": 23.895,
+      "changes": [
+        4.5,
+        15.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 28.855,
+      "changes": [
+        19.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 23.285,
+      "changes": [
+        4.5,
+        15.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 22.765,
+      "changes": [
+        9.5,
+        19.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 21.385,
+      "changes": [
+        13.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 20.065,
+      "changes": [
+        17.5
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 24.535,
+      "changes": [
+        6.0,
+        21.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 14.0,
+      "duration": 17.055,
+      "changes": [
+        10.0
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 9.0,
+      "duration": 17.935,
+      "changes": [
+        5.0
+      ]
+    }
+  ],
+  "spoof": [
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.0,
+      "duration": 40.325,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 29.605,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.5,
+      "duration": 34.545,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 31.445,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 23.595,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 6.0,
+      "duration": 27.585,
+      "changes": [
+        22.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 11.5,
+      "duration": 25.815,
+      "changes": [
+        5.5,
+        21.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 23.0,
+      "duration": 27.165,
+      "changes": [
+        6.5,
+        18.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 6.0,
+      "duration": 27.695,
+      "changes": [
+        15.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 18.0,
+      "duration": 24.825,
+      "changes": [
+        16.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 25.725,
+      "changes": [
+        5.5,
+        25.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 10.0,
+      "duration": 24.775,
+      "changes": [
+        4.0,
+        16.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 27.695,
+      "changes": [
+        6.0,
+        15.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 13.0,
+      "duration": 28.265,
+      "changes": [
+        7.5,
+        23.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 22.5,
+      "duration": 26.365,
+      "changes": [
+        6.5,
+        18.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 12.0,
+      "duration": 26.835,
+      "changes": [
+        6.5,
+        22.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 29.015,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 21.5,
+      "duration": 25.315,
+      "changes": [
+        5.0,
+        17.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 13.0,
+      "duration": 30.535,
+      "changes": [
+        6.0,
+        19.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 27.555,
+      "changes": [
+        12.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 24.915,
+      "changes": [
+        8.0,
+        17.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 24.145,
+      "changes": [
+        10.0,
+        18.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 25.545,
+      "changes": [
+        5.0,
+        14.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.5,
+      "duration": 25.235,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 15.0,
+      "duration": 22.055,
+      "changes": [
+        12.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 11.0,
+      "duration": 28.985,
+      "changes": [
+        5.0,
+        17.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 26.565,
+      "changes": [
+        5.5,
+        21.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 13.0,
+      "duration": 27.985,
+      "changes": [
+        5.0,
+        22.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 22.5,
+      "duration": 27.465,
+      "changes": [
+        8.5,
+        17.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 30.225,
+      "changes": [
+        13.0
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 23.465,
+      "changes": [
+        5.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 6.5,
+      "duration": 26.775,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 13.0,
+      "duration": 29.615,
+      "changes": [
+        6.5,
+        24.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 15.0,
+      "duration": 25.555,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 26.845,
+      "changes": [
+        15.5
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 23.805,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 30.265,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 30.655,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 29.685,
+      "changes": []
+    },
+    {
+      "label": "spoof",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 30.425,
+      "changes": []
+    }
+  ],
+  "swap": [
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 35.5,
+      "duration": 73.07,
+      "changes": [
+        33.5
+      ],
+      "onset": 32.745
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 30.0,
+      "duration": 56.77,
+      "changes": [
+        28.0
+      ],
+      "onset": 27.165
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 35.5,
+      "duration": 65.99,
+      "changes": [
+        17.5,
+        32.5
+      ],
+      "onset": 31.445
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 35.5,
+      "duration": 63.93,
+      "changes": [
+        33.0
+      ],
+      "onset": 32.485
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 35.0,
+      "duration": 55.7,
+      "changes": [
+        33.0
+      ],
+      "onset": 32.105
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 46.5,
+      "duration": 61.34,
+      "changes": [
+        40.0,
+        56.0
+      ],
+      "onset": 33.755
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 38.0,
+      "duration": 56.39,
+      "changes": [
+        36.0,
+        51.5
+      ],
+      "onset": 30.575
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 38.5,
+      "duration": 57.8,
+      "changes": [
+        18.5,
+        36.5,
+        53.0
+      ],
+      "onset": 30.635
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 33.5,
+      "duration": 55.45,
+      "changes": [
+        28.5,
+        44.0
+      ],
+      "onset": 27.755
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 50.5,
+      "duration": 57.46,
+      "changes": [
+        12.5,
+        33.5,
+        48.5
+      ],
+      "onset": 32.635
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 43.5,
+      "duration": 59.03,
+      "changes": [
+        38.5,
+        54.0
+      ],
+      "onset": 33.305
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 19.0,
+      "duration": 51.33,
+      "changes": [
+        7.5,
+        15.5,
+        27.0,
+        42.5
+      ],
+      "onset": 26.555
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 48.56,
+      "changes": [
+        5.0,
+        21.5,
+        36.5
+      ],
+      "onset": 20.865
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 48.27,
+      "changes": [
+        5.0,
+        21.0,
+        32.5,
+        44.0
+      ],
+      "onset": 20.005
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 47.47,
+      "changes": [
+        17.0,
+        27.5,
+        38.5
+      ],
+      "onset": 21.105
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 6.5,
+      "duration": 49.69,
+      "changes": [
+        15.0,
+        29.0,
+        39.5
+      ],
+      "onset": 22.855
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.5,
+      "duration": 50.75,
+      "changes": [
+        41.0
+      ],
+      "onset": 21.735
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 14.5,
+      "duration": 45.65,
+      "changes": [
+        9.0,
+        21.0,
+        41.5
+      ],
+      "onset": 20.335
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 15.5,
+      "duration": 50.99,
+      "changes": [
+        4.5,
+        13.0,
+        33.0,
+        43.0
+      ],
+      "onset": 20.455
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 48.54,
+      "changes": [
+        5.5,
+        26.0
+      ],
+      "onset": 20.985
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.0,
+      "duration": 47.88,
+      "changes": [
+        5.0,
+        31.0,
+        40.0
+      ],
+      "onset": 22.965
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 47.8,
+      "changes": [
+        11.0,
+        19.0,
+        33.5
+      ],
+      "onset": 23.655
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 16.0,
+      "duration": 51.03,
+      "changes": [
+        11.0,
+        22.5,
+        36.0
+      ],
+      "onset": 25.485
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 25.0,
+      "duration": 54.92,
+      "changes": [
+        10.5,
+        18.5,
+        40.0
+      ],
+      "onset": 29.685
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 10.5,
+      "duration": 47.96,
+      "changes": [
+        6.0,
+        19.0,
+        41.0
+      ],
+      "onset": 25.905
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 52.63,
+      "changes": [
+        24.0,
+        35.0,
+        48.5
+      ],
+      "onset": 23.645
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 32.5,
+      "duration": 50.2,
+      "changes": [
+        14.0,
+        29.5,
+        40.5
+      ],
+      "onset": 23.635
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 20.0,
+      "duration": 51.91,
+      "changes": [
+        6.0,
+        14.0,
+        29.0,
+        46.5
+      ],
+      "onset": 23.925
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 19.5,
+      "duration": 55.61,
+      "changes": [
+        13.0,
+        35.0,
+        45.0
+      ],
+      "onset": 28.145
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 19.0,
+      "duration": 54.4,
+      "changes": [
+        5.5,
+        15.0
+      ],
+      "onset": 24.175
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 17.0,
+      "duration": 50.09,
+      "changes": [
+        5.5,
+        15.0,
+        27.5,
+        36.5
+      ],
+      "onset": 26.625
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 6.5,
+      "duration": 50.67,
+      "changes": [
+        4.5,
+        15.5,
+        30.5
+      ],
+      "onset": 23.895
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 4.5,
+      "duration": 58.47,
+      "changes": [
+        19.0,
+        35.5,
+        46.0
+      ],
+      "onset": 28.855
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 43.5,
+      "duration": 48.84,
+      "changes": [
+        4.5,
+        15.0,
+        28.5,
+        38.0
+      ],
+      "onset": 23.285
+    },
+    {
+      "label": "swap",
+      "tier": 0,
+      "latch": 1,
+      "first_alert": 24.0,
+      "duration": 49.61,
+      "changes": [
+        9.5,
+        19.0
+      ],
+      "onset": 22.765
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 5.0,
+      "duration": 45.19,
+      "changes": [
+        13.0
+      ],
+      "onset": 21.385
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 8.0,
+      "duration": 50.33,
+      "changes": [
+        17.5
+      ],
+      "onset": 20.065
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 12.5,
+      "duration": 55.19,
+      "changes": [
+        6.0,
+        21.0
+      ],
+      "onset": 24.535
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 14.0,
+      "duration": 46.74,
+      "changes": [
+        10.0
+      ],
+      "onset": 17.055
+    },
+    {
+      "label": "swap",
+      "tier": 1,
+      "latch": 1,
+      "first_alert": 9.0,
+      "duration": 48.36,
+      "changes": [
+        5.0,
+        18.5
+      ],
+      "onset": 17.935
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.11352821210061183,
+      "ci95": [
+        0.11030232523069397,
+        0.11626970828968983
+      ],
+      "n": 71237,
+      "inverted": false
+    },
+    "wavefake:eval_unseen_vocoder": {
+      "eer": 0.3008252063015754,
+      "ci95": [
+        0.2844024974598394,
+        0.31693508180126445
+      ],
+      "n": 5332,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_en": {
+      "eer": 0.45570400822199386,
+      "ci95": [
+        0.43787279425490555,
+        0.4740745670921792
+      ],
+      "n": 5844,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_zh": {
+      "eer": 0.5534351145038168,
+      "ci95": [
+        0.542370979051708,
+        0.5650815269784197
+      ],
+      "n": 9360,
+      "inverted": true
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.36541868302167274,
+      "ci95": [
+        0.3604217376833631,
+        0.37201005907471246
+      ],
+      "n": 71237,
+      "inverted": false
+    },
+    "wavefake:eval_unseen_vocoder": {
+      "eer": 0.4936234058514629,
+      "ci95": [
+        0.4777897841136119,
+        0.5074229101900555
+      ],
+      "n": 5332,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_en": {
+      "eer": 0.2292765084944347,
+      "ci95": [
+        0.21350074836845306,
+        0.24314706816930026
+      ],
+      "n": 5844,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_zh": {
+      "eer": 0.3334109589041096,
+      "ci95": [
+        0.3240281934620315,
+        0.34435829973036014
+      ],
+      "n": 9360,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_naive_seed0.pt": {
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.09467455621301779,
+      "ci95": [
+        0.09169033905814732,
+        0.09750638705162654
+      ],
+      "n": 71237,
+      "inverted": false
+    },
+    "wavefake:eval_unseen_vocoder": {
+      "eer": 0.49337334333583394,
+      "ci95": [
+        0.47899173677094997,
+        0.5092877203279879
+      ],
+      "n": 5332,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_en": {
+      "eer": 0.24182910743074892,
+      "ci95": [
+        0.22620924968865694,
+        0.25631752048390277
+      ],
+      "n": 5844,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_zh": {
+      "eer": 0.36705253784505787,
+      "ci95": [
+        0.35611273145148165,
+        0.37825670479530393
+      ],
+      "n": 9360,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_bal_seed0.pt": {
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.09843643779741672,
+      "ci95": [
+        0.095361478341659,
+        0.10213498906779957
+      ],
+      "n": 71237,
+      "inverted": false
+    },
+    "wavefake:eval_unseen_vocoder": {
+      "eer": 0.4983745936484121,
+      "ci95": [
+        0.48376862492011174,
+        0.5115620421925267
+      ],
+      "n": 5332,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_en": {
+      "eer": 0.256263636959555,
+      "ci95": [
+        0.23639935897157183,
+        0.2756681317483609
+      ],
+      "n": 5844,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_zh": {
+      "eer": 0.38275911977166355,
+      "ci95": [
+        0.369144180942086,
+        0.3965923959886154
+      ],
+      "n": 9360,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_dann_seed0.pt": {
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.10142760027192387,
+      "ci95": [
+        0.09877831486874844,
+        0.10448357402216746
+      ],
+      "n": 71237,
+      "inverted": false
+    },
+    "wavefake:eval_unseen_vocoder": {
+      "eer": 0.46811702925731435,
+      "ci95": [
+        0.452938642343077,
+        0.4815445083691201
+      ],
+      "n": 5332,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_en": {
+      "eer": 0.24514811031664965,
+      "ci95": [
+        0.2279479041806493,
+        0.2602578552415364
+      ],
+      "n": 5844,
+      "inverted": false
+    },
+    "rtcfake:eval_rtc_zh": {
+      "eer": 0.3556544968833482,
+      "ci95": [
+        0.34451345387243737,
+        0.36616089154461373
+      ],
+      "n": 9360,
+      "inverted": false
+    }
+  }
+}

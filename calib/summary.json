@@ -1,0 +1,49 @@
+{
+  "branch": "A",
+  "checkpoint": "checkpoints/branch_A_seed0.pt",
+  "calib_rows": 17764,
+  "uncalibrated_eer": 0.023356338296057474,
+  "channels": {
+    "clean": {
+      "n": 8882,
+      "eer": 0.015209646798266965,
+      "a": 0.5099862910133259,
+      "b": -0.5070638319701731,
+      "cllr": 0.062303880869359826,
+      "min_cllr": 0.055239240356078995,
+      "calibration_loss": 0.0070646405132808315
+    },
+    "g711": {
+      "n": 8882,
+      "eer": 0.03296045806889002,
+      "a": 0.4114745883784457,
+      "b": -1.2891142111706306,
+      "cllr": 0.13773696032803467,
+      "min_cllr": 0.12033426471527167,
+      "calibration_loss": 0.017402695612763003
+    }
+  },
+  "pooled": {
+    "a": 0.43819476553334336,
+    "b": -1.0586259244225948,
+    "cllr": 0.10297730199556691,
+    "min_cllr": 0.09191859580209788,
+    "calibration_loss": 0.011058706193469034
+  },
+  "eta_SUPERSEDED": {
+    "A": 0.08002543056732446,
+    "n_sequences": 400,
+    "profile": {
+      "lag1": 0.8239852621126343,
+      "lag2": 0.7797347149818371,
+      "lag3": 0.750985022231812,
+      "lag4": 0.7268772727516878,
+      "lag5": 0.7027695232715637,
+      "lag6": 0.6786617737914398,
+      "lag7": 0.6545540243113157,
+      "lag8": 0.6304462748311918,
+      "mean_windows_per_call": 35.8
+    },
+    "_invalid": "Measured while DualRateChunker emitted byte-identical windows for a push spanning several ticks, so this autocorrelation is float non-determinism, not signal. Superseded by docs/eta_branches.json (A=0.207, A2=0.928, B=0.565, 800 calls)."
+  }
+}

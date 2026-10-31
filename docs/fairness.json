@@ -1,0 +1,41 @@
+{
+  "reference": "rtcfake:eval_rtc_en",
+  "populations": {
+    "0.01": {
+      "threshold": 3.216762447707374,
+      "rtcfake:eval_rtc_en": {
+        "n": 979,
+        "fpr": 0.010214504596527068,
+        "n_spoof": 4865,
+        "miss_rate": 0.6100719424460431
+      },
+      "rtcfake:eval_rtc_zh": {
+        "n": 1870,
+        "fpr": 0.0021390374331550803,
+        "ratio_to_reference": 0.20941176470588235,
+        "n_spoof": 7490,
+        "miss_rate": 0.8449933244325768,
+        "miss_ratio_to_reference": 1.385071604907172
+      }
+    },
+    "0.05": {
+      "threshold": 2.3313618826518168,
+      "rtcfake:eval_rtc_en": {
+        "n": 979,
+        "fpr": 0.05005107252298264,
+        "n_spoof": 4865,
+        "miss_rate": 0.3821171634121274
+      },
+      "rtcfake:eval_rtc_zh": {
+        "n": 1870,
+        "fpr": 0.023529411764705882,
+        "ratio_to_reference": 0.4701080432172869,
+        "n_spoof": 7490,
+        "miss_rate": 0.6959946595460614,
+        "miss_ratio_to_reference": 1.8214169008561534
+      }
+    }
+  },
+  "worst_fpr_ratio": 0.4701080432172869,
+  "worst_miss_ratio": 1.8214169008561534
+}

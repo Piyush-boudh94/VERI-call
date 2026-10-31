@@ -1,0 +1,46 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.2248,
+      "ci95": [
+        0.21263239237364853,
+        0.23700995822125565
+      ],
+      "n": 5000,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.29479999999999995,
+      "ci95": [
+        0.28357907188682546,
+        0.30717306073410544
+      ],
+      "n": 5000,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_mix_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.2476,
+      "ci95": [
+        0.23585918268994913,
+        0.2595004695778902
+      ],
+      "n": 5000,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_dann_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.2356,
+      "ci95": [
+        0.22367738440472962,
+        0.24631310881444524
+      ],
+      "n": 5000,
+      "inverted": false
+    }
+  }
+}

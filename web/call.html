@@ -1,0 +1,513 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>VeriCall — two-party call</title>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--dim:#8b949e;
+        --ok:#3fb950;--warn:#d29922;--bad:#f85149;--accent:#58a6ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:14px/1.5 ui-sans-serif,system-ui,-apple-system,sans-serif}
+  header{padding:14px 20px;border-bottom:1px solid var(--line);
+         display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.2px}
+  .sub{color:var(--dim);font-size:12px}
+  a{color:var(--accent)}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px;display:grid;
+        grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .card h2{font-size:11px;text-transform:uppercase;letter-spacing:.8px;
+           color:var(--dim);margin:0 0 12px;font-weight:600}
+  .full{grid-column:1/-1}
+  .risk{font-size:52px;font-weight:650;line-height:1;font-variant-numeric:tabular-nums}
+  .risk small{font-size:15px;color:var(--dim);font-weight:400;margin-left:8px}
+  .trend{font-size:12px;color:var(--dim);margin-top:6px}
+  .pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;
+        font-weight:600;letter-spacing:.3px}
+  .t0{background:#1c2b1e;color:var(--ok)} .t1{background:#2d2610;color:var(--warn)}
+  .t2{background:#3a2317;color:#ff9d5c} .t3{background:#3d1618;color:var(--bad)}
+  .neutral{background:#21262d;color:var(--dim)}
+  button{background:var(--accent);color:#04121f;border:0;border-radius:6px;
+         padding:8px 14px;font-weight:600;cursor:pointer;font-size:13px}
+  button:disabled{opacity:.45;cursor:default}
+  button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+  input{background:#0d1117;color:var(--fg);border:1px solid var(--line);
+        border-radius:6px;padding:8px 10px;font:inherit;width:170px}
+  canvas{width:100%;height:96px;display:block}
+  .kv{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}
+  .kv span:last-child{color:var(--dim);font-variant-numeric:tabular-nums}
+  .bar{height:6px;background:#21262d;border-radius:3px;overflow:hidden;margin-top:3px}
+  .bar i{display:block;height:100%;border-radius:3px}
+  .warnbar{background:#3d1618;color:#ffb4ae;padding:8px 20px;font-size:12px;display:none}
+  .warnbar.on{display:block}
+  .notebar{background:#1c2430;color:#a9c7ea;padding:8px 20px;font-size:12px}
+  #alert{display:none;border-color:var(--bad);background:#2a1416}
+  #alert.on{display:block}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  code{background:#0d1117;border:1px solid var(--line);border-radius:4px;
+       padding:1px 5px;font-size:12px}
+</style>
+
+<header>
+  <h1>VeriCall</h1>
+  <span class="sub">two-party call · the detector scores whoever is speaking to you</span>
+  <span style="flex:1"></span>
+  <span class="sub"><a href="/">single-stream demo</a></span>
+  <span class="sub" id="conn">idle</span>
+</header>
+<div class="warnbar" id="warnbar"></div>
+<div class="notebar" id="notebar">
+  Open this page in two browser tabs (or on two machines on the same network),
+  type the <b>same room name</b> in both, and press Join. Use headphones:
+  remote audio is muted by default to stop feedback.
+</div>
+
+<div class="wrap">
+  <div class="card full">
+    <h2>Call</h2>
+    <div class="row">
+      <input id="room" placeholder="room name" autocomplete="off">
+      <button id="join">Join</button>
+      <button id="hang" class="ghost" disabled>Hang up</button>
+      <button id="unmute" class="ghost" disabled>Unmute remote</button>
+      <span class="sub" id="state">not connected</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Risk — the person you are hearing</h2>
+    <div class="risk" id="risk">--<small>nats</small></div>
+    <div class="trend" id="trend">no remote audio yet</div>
+    <div style="margin-top:12px">
+      <span class="pill neutral" id="tier">no verdict</span>
+    </div>
+    <div class="bar" style="margin-top:14px"><i id="meterbar" style="width:0;background:var(--ok)"></i></div>
+    <div class="trend" id="meternote">evidence rate</div>
+  </div>
+
+  <div class="card">
+    <h2>Detector state</h2>
+    <div class="kv"><span>confidence</span><span id="conf">—</span></div>
+    <div class="kv"><span>audio scored</span><span id="scored">—</span></div>
+    <div class="kv"><span>channel bucket</span><span id="chan">—</span></div>
+    <div class="kv"><span>branches reporting</span><span id="branches">—</span></div>
+    <div class="kv"><span>speaker change</span><span id="turn">—</span></div>
+    <div class="kv"><span>dropped chunks</span><span id="dropped">—</span></div>
+  </div>
+
+  <div class="card full" id="alert">
+    <h2 style="color:var(--bad)">Alert</h2>
+    <div id="alertbody"></div>
+  </div>
+
+  <div class="card full">
+    <h2>Remote evidence (nats, accumulated)</h2>
+    <canvas id="plot" width="1040" height="96"></canvas>
+  </div>
+
+  <div class="card full">
+    <h2>What this demo does and does not establish</h2>
+    <p class="sub" id="caveats" style="margin:0"></p>
+  </div>
+</div>
+
+<audio id="remote" autoplay muted></audio>
+
+<script>
+// ---------------------------------------------------------------------------
+// Two-party calling.
+//
+// The media path is peer-to-peer: WebRTC carries SRTP straight between the two
+// browsers and the server sees none of it. So the detector cannot tap the
+// wire -- instead each browser taps its OWN decoded copy of the remote track
+// and streams that to /ws/{call_id} as 16 kHz mono int16, the same wire format
+// every other source in this project uses.
+//
+// The consequence is that VeriCall here scores what a PARTICIPANT hears. That
+// is the honest description of this architecture, and it is also the realistic
+// deployment: the person being defrauded is the one who needs the verdict.
+//
+// Two things about this path that change the numbers, stated in the UI as well
+// as here because they are easy to forget while watching a live meter:
+//
+//   1. WebRTC encodes with Opus. Every calibration bucket in this project was
+//      fitted on clean, G.711 or a simulated noisy line -- never Opus. The
+//      LLRs on this page are therefore scored against the nearest bucket the
+//      runtime detector picks, which is not the right one.
+//   2. Browser voice processing is left OFF for the same reason index.html
+//      leaves it off: echo cancellation and noise suppression are a de-facto
+//      codec, and calibration was not fitted through them. That makes feedback
+//      the user's problem, hence headphones and a muted remote by default.
+// ---------------------------------------------------------------------------
+const SR = 16000, FRAME = 0.5;
+const ACTIONS = {0:"monitor",1:"step-up verification",2:"agent alert",3:"fraud desk"};
+const $ = id => document.getElementById(id);
+
+let pc = null, sig = null, det = null, localStream = null;
+let audioCtx = null, tapNode = null, role = null, roomName = null;
+let series = [], pendingIce = [];
+
+function warn(msg){ const b=$("warnbar"); b.textContent=msg; b.classList.add("on"); }
+function clearWarn(){ $("warnbar").classList.remove("on"); }
+function setState(s){ $("state").textContent = s; }
+function setConn(s){ $("conn").textContent = s; }
+
+function token(){
+  return new URLSearchParams(location.search).get("token")
+      || localStorage.getItem("vericall_token") || "";
+}
+function q(){ const t=token(); return t ? `?token=${encodeURIComponent(t)}` : ""; }
+function wsBase(){
+  const proto = location.protocol === "https:" ? "wss:" : "ws:";
+  return `${proto}//${location.host}`;
+}
+
+// ------------------------------------------------------------------ join
+$("join").onclick = async () => {
+  const name = ($("room").value || "").trim();
+  if(!/^[A-Za-z0-9._:-]{1,64}$/.test(name)){
+    warn("Room name must be 1-64 characters of letters, digits, dot, dash, " +
+         "underscore or colon — the server applies the same rule and will " +
+         "refuse anything else.");
+    return;
+  }
+  clearWarn();
+  roomName = name;
+  $("join").disabled = true; $("room").disabled = true;
+
+  // Microphone first: if it is denied there is no call to place, and finding
+  // that out after the signalling handshake wastes the other peer's time.
+  try{
+    localStream = await navigator.mediaDevices.getUserMedia({audio:{
+      channelCount: 1,
+      echoCancellation: false,
+      noiseSuppression: false,
+      autoGainControl: false,
+    }});
+  }catch(err){
+    warn("Microphone denied or unavailable: " + err.name + ". A call needs " +
+         "permission, and the page must be on https:// or localhost — " +
+         "browsers block getUserMedia elsewhere.");
+    $("join").disabled = false; $("room").disabled = false;
+    return;
+  }
+
+  sig = new WebSocket(`${wsBase()}/rtc/${encodeURIComponent(name)}${q()}`);
+  sig.onopen = () => { setConn("signalling connected"); setState("waiting for the other side"); };
+  sig.onmessage = onSignal;
+  sig.onerror = () => warn("Could not reach the signalling endpoint at /rtc/. " +
+                           "Is the gateway running and serving this page?");
+  sig.onclose = ev => {
+    const why = {4400:"the server rejected that room name",
+                 4401:"the token was rejected",
+                 4409:"that room already has two people in it",
+                 4429:"the server is holding its maximum number of rooms"}[ev.code];
+    if(why) warn("Signalling closed: " + why + ".");
+    setConn("signalling closed");
+    teardown(false);
+  };
+  $("hang").disabled = false;
+};
+
+// ------------------------------------------------------------- signalling
+async function onSignal(ev){
+  let m; try{ m = JSON.parse(ev.data); }catch{ return; }
+
+  if(m.error){ warn("Signalling refused: " + m.error); return; }
+
+  if(m.type === "joined"){
+    role = m.role;
+    setState(`joined as ${role}` + (m.peers > 1 ? "" : " — waiting for a peer"));
+    buildPeer(m.ice_servers || [{urls:["stun:stun.l.google.com:19302"]}]);
+    // The callee waits for an offer. The caller waits for peer-joined, so it
+    // does not offer into an empty room -- an offer nobody answers just times
+    // out and has to be redone.
+    if(role === "caller" && m.peers > 1) await makeOffer();
+    return;
+  }
+
+  if(m.type === "peer-joined"){
+    setState("peer joined");
+    if(role === "caller") await makeOffer();
+    return;
+  }
+
+  if(m.type === "peer-left"){
+    setState("the other side hung up");
+    stopDetector();
+    return;
+  }
+
+  if(m.type === "rejected"){
+    // The server admits four message types and drops the rest. Surfacing this
+    // rather than swallowing it: a silent drop during a handshake looks like
+    // a network fault and is debugged as one.
+    warn("The server rejected a signalling message (" + m.reason + ").");
+    return;
+  }
+
+  if(!pc) return;
+
+  if(m.type === "offer"){
+    await pc.setRemoteDescription({type:"offer", sdp:m.sdp});
+    await drainIce();
+    const answer = await pc.createAnswer();
+    await pc.setLocalDescription(answer);
+    send({type:"answer", sdp:answer.sdp});
+    setState("answered");
+    return;
+  }
+
+  if(m.type === "answer"){
+    await pc.setRemoteDescription({type:"answer", sdp:m.sdp});
+    await drainIce();
+    setState("connected");
+    return;
+  }
+
+  if(m.type === "ice" && m.candidate){
+    // Candidates can arrive before the remote description exists. Adding one
+    // then throws, so they are queued and drained after setRemoteDescription.
+    if(!pc.remoteDescription || !pc.remoteDescription.type){
+      pendingIce.push(m.candidate);
+    }else{
+      try{ await pc.addIceCandidate(m.candidate); }catch(e){}
+    }
+  }
+}
+
+async function drainIce(){
+  while(pendingIce.length){
+    const c = pendingIce.shift();
+    try{ await pc.addIceCandidate(c); }catch(e){}
+  }
+}
+
+function send(obj){ if(sig && sig.readyState === 1) sig.send(JSON.stringify(obj)); }
+
+async function makeOffer(){
+  const offer = await pc.createOffer({offerToReceiveAudio:true});
+  await pc.setLocalDescription(offer);
+  send({type:"offer", sdp:offer.sdp});
+  setState("offer sent");
+}
+
+// ----------------------------------------------------------- peer connection
+function buildPeer(iceServers){
+  if(pc) return;
+  pc = new RTCPeerConnection({iceServers});
+  for(const track of localStream.getAudioTracks()) pc.addTrack(track, localStream);
+
+  pc.onicecandidate = e => { if(e.candidate) send({type:"ice", candidate:e.candidate}); };
+
+  pc.onconnectionstatechange = () => {
+    setConn("peer " + pc.connectionState);
+    if(pc.connectionState === "connected") clearWarn();
+    if(pc.connectionState === "failed"){
+      warn("The peer connection failed. Both sides are probably behind NAT " +
+           "that STUN alone cannot traverse — that needs a TURN relay, which " +
+           "this deployment does not run. Two tabs on one machine, or two " +
+           "machines on the same network, will connect.");
+    }
+  };
+
+  pc.ontrack = e => {
+    const stream = e.streams[0];
+    // Attach to an <audio> element even though it starts muted: Chrome will
+    // not pump a remote stream through Web Audio unless the stream is also
+    // attached to a media element. Without this the tap stays silent and the
+    // detector sees a dead line rather than an error.
+    $("remote").srcObject = stream;
+    $("unmute").disabled = false;
+    startDetector(stream);
+  };
+}
+
+// -------------------------------------------------------------- the detector
+// Same resample-and-frame path as the single-stream demo: getUserMedia and a
+// decoded WebRTC track both arrive at the AudioContext's rate (commonly 48 kHz)
+// and the model is 16 kHz. Sending 48 kHz samples does not error, it silently
+// scores audio that sounds three times too fast.
+function startDetector(stream){
+  stopDetector();
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = audioCtx.createMediaStreamSource(stream);
+
+  const id = `rtc-${roomName}-${role}-${Date.now().toString(36)}`;
+  // channel=opus. This page is the one component that KNOWS the codec in the
+  // path: WebRTC negotiates Opus, and the server's channel detector cannot
+  // tell Opus from clean audio because it is wideband and loses no frames
+  // (97-98% "clean", measured). Declaring it selects the opus calibration
+  // bucket and the opus fusion weights, which down-weight Branch A2 -- A2
+  // reads phase and Opus does not preserve it.
+  const sep = q() ? "&" : "?";
+  det = new WebSocket(`${wsBase()}/ws/${id}${q()}${sep}channel=opus`);
+  det.binaryType = "arraybuffer";
+  det.onopen = () => setState("connected · scoring the remote stream");
+  det.onmessage = onDetector;
+  det.onerror = () => warn("Could not reach the detector socket at /ws/.");
+  det.onclose = () => { $("trend").textContent = "detector disconnected"; };
+
+  const BUF = 4096;
+  tapNode = audioCtx.createScriptProcessor(BUF, 1, 1);
+  const ratio = audioCtx.sampleRate / SR;
+  let carry = [];
+
+  tapNode.onaudioprocess = e => {
+    if(!det || det.readyState !== 1) return;
+    const input = e.inputBuffer.getChannelData(0);
+    const outLen = Math.floor(input.length / ratio);
+    for(let i=0;i<outLen;i++){
+      const pos = i*ratio, i0 = Math.floor(pos), frac = pos - i0;
+      const a = input[i0], b = input[Math.min(i0+1, input.length-1)];
+      carry.push(a + (b-a)*frac);
+    }
+    const step = SR * FRAME;
+    while(carry.length >= step){
+      const slice = carry.splice(0, step);
+      const pcm = new Int16Array(step);
+      for(let k=0;k<step;k++){
+        const v = Math.max(-1, Math.min(1, slice[k]));
+        pcm[k] = v < 0 ? v*0x8000 : v*0x7fff;
+      }
+      if(det && det.readyState === 1) det.send(pcm.buffer);
+    }
+  };
+  src.connect(tapNode);
+  // ScriptProcessor only fires while connected to a destination, and a
+  // zero-gain node keeps it running without routing the remote party back out
+  // of the speakers a second time.
+  const mute = audioCtx.createGain(); mute.gain.value = 0;
+  tapNode.connect(mute); mute.connect(audioCtx.destination);
+}
+
+function stopDetector(){
+  if(tapNode){ try{ tapNode.disconnect(); }catch(e){} tapNode.onaudioprocess = null; tapNode = null; }
+  if(audioCtx){ try{ audioCtx.close(); }catch(e){} audioCtx = null; }
+  if(det){ try{ det.close(); }catch(e){} det = null; }
+}
+
+// ------------------------------------------------------------------ display
+function onDetector(ev){
+  let s; try{ s = JSON.parse(ev.data); }catch{ return; }
+  if(s.error){ warn("Detector: " + s.error); return; }
+  if(s.warning){ $("trend").textContent = "detector " + s.warning; return; }
+  if(typeof s.risk !== "number") return;
+
+  $("risk").innerHTML = (s.risk>=0?"+":"") + s.risk.toFixed(1) + "<small>nats</small>";
+  const tier = s.tier || 0;
+  const pill = $("tier");
+  pill.className = "pill t" + tier;
+  pill.textContent = `tier ${tier} · ${s.action || ACTIONS[tier]}`;
+  $("trend").textContent = s.tier_latch
+    ? "latched — held above the exit threshold" : "tracking";
+
+  const c = s.confidence || {};
+  $("conf").textContent = c.level ? `${c.level} (${(c.score??0).toFixed(2)})` : "—";
+  $("scored").textContent = c.audio_scored_s != null ? c.audio_scored_s.toFixed(1)+"s" : "—";
+  $("branches").textContent = (s.active_branches||[]).join(", ") || "—";
+  $("dropped").textContent = s.dropped_chunks ?? 0;
+  $("turn").textContent = s.changed_at != null ? `at ${s.changed_at.toFixed(1)}s` : "none";
+  if(c.reason) $("meternote").textContent = c.reason;
+
+  const m = Math.max(0, Math.min(1, (s.meter||0)/6));
+  const bar = $("meterbar");
+  bar.style.width = (m*100).toFixed(0)+"%";
+  bar.style.background = tier>=3 ? "var(--bad)" : tier>=1 ? "var(--warn)" : "var(--ok)";
+
+  if(s.alerts && s.alerts.length){
+    const a = s.alerts[0];
+    $("alert").classList.add("on");
+    $("alertbody").innerHTML =
+      `<b>Tier ${a.tier}</b> — ${a.reason || ACTIONS[a.tier]} at ${a.at}s.`;
+  }
+
+  series.push(s.risk);
+  if(series.length > 1040) series.shift();
+  draw();
+}
+
+function draw(){
+  const cv = $("plot"), g = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  g.clearRect(0,0,W,H);
+  if(series.length < 2) return;
+  const lo = Math.min(-2, ...series), hi = Math.max(6, ...series);
+  const y = v => H - ((v - lo) / (hi - lo)) * H;
+  g.strokeStyle = "#30363d"; g.lineWidth = 1;
+  g.beginPath(); g.moveTo(0, y(0)); g.lineTo(W, y(0)); g.stroke();
+  g.strokeStyle = "#58a6ff"; g.lineWidth = 2; g.beginPath();
+  series.forEach((v,i) => {
+    const x = (i/(series.length-1))*W;
+    i ? g.lineTo(x, y(v)) : g.moveTo(x, y(v));
+  });
+  g.stroke();
+}
+
+// -------------------------------------------------------------- teardown
+$("hang").onclick = () => { send({type:"bye"}); teardown(true); };
+
+function teardown(closeSig){
+  stopDetector();
+  if(pc){ try{ pc.close(); }catch(e){} pc = null; }
+  if(localStream){ localStream.getTracks().forEach(t=>t.stop()); localStream = null; }
+  if(closeSig && sig){ try{ sig.close(); }catch(e){} }
+  sig = null; role = null; pendingIce = [];
+  $("remote").srcObject = null;
+  $("join").disabled = false; $("room").disabled = false;
+  $("hang").disabled = true; $("unmute").disabled = true;
+  setState("not connected");
+  $("tier").className = "pill neutral";
+  $("tier").textContent = "no verdict";
+}
+
+$("unmute").onclick = () => {
+  const a = $("remote");
+  a.muted = !a.muted;
+  $("unmute").textContent = a.muted ? "Unmute remote" : "Mute remote";
+};
+
+// ------------------------------------------------------------- the caveats
+// Written into the page rather than left in a document, because this is the
+// screen somebody will be looking at while deciding whether to believe it.
+fetch("/health").then(r=>r.json()).then(h=>{
+  const turn = h.webrtc && h.webrtc.turn_configured;
+  const buckets = (h.calibration_buckets||[]).join(", ");
+  const opus = h.opus_bucket || {};
+  const w = opus.fusion_weights || {};
+  $("caveats").innerHTML =
+    (opus.calibration
+      ? `<b>Calibrated for this channel, with one branch deliberately ` +
+        `demoted.</b> WebRTC encodes with Opus, so this page declares ` +
+        `<code>channel=opus</code> and the server applies a mapping fitted ` +
+        `through real libopus at 24 kbps. Branch A is barely affected by ` +
+        `Opus (1.18% → 1.33% EER). <b>Branch A2 is not</b>: it reads phase, ` +
+        `Opus is a transform codec that does not preserve phase, and A2 goes ` +
+        `1.77% → 18.07% EER. Refitting its mapping fixes the calibration but ` +
+        `cannot recover the information, so its fusion weight is cut from ` +
+        `0.87 to ${w.A2 ?? "—"} here. The verdicts are calibrated; they rest ` +
+        `mostly on one branch.`
+      : `<b>The numbers on this page are not calibrated for this channel.</b> ` +
+        `WebRTC encodes with Opus and no opus bucket is loaded (${buckets}), ` +
+        `so the nearest wrong bucket is being applied. Run ` +
+        `scripts/fit_opus_bucket.py. Treat tier changes as a demonstration ` +
+        `that the pipeline runs, not as a likelihood ratio.`) +
+    `<br><br>` +
+    `<b>The server never sees this audio.</b> WebRTC media is SRTP-encrypted ` +
+    `peer to peer, so the detector runs on each participant's own decoded ` +
+    `copy. VeriCall scores what a participant hears; it is not a ` +
+    `network-side interceptor.<br><br>` +
+    `<b>NAT traversal.</b> ICE servers: ${(h.webrtc&&h.webrtc.ice_servers||[]).join(", ")||"none"}. ` +
+    (turn ? "A TURN relay is configured, so restrictive networks should connect."
+          : "No TURN relay is configured, so two peers behind symmetric NAT " +
+            "will fail to connect. Two tabs on one machine, or two machines " +
+            "on one network, will work.");
+}).catch(()=>{
+  $("caveats").textContent =
+    "Could not read /health, so the channel-calibration and NAT caveats " +
+    "could not be filled in. They still apply.";
+});
+
+// Prefill the room from ?room= so a link can carry it to the second tab.
+const pre = new URLSearchParams(location.search).get("room");
+if(pre) $("room").value = pre;
+</script>

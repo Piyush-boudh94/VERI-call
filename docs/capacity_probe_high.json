@@ -1,0 +1,58 @@
+[
+  {
+    "calls": 64,
+    "audio_s": 12.0,
+    "wall_s": 11.65,
+    "realtime_factor": 0.97,
+    "windows": 1408,
+    "windows_per_s": 120.8,
+    "mean_batch": 5.1,
+    "submit_to_result_p50_ms": 23.2,
+    "submit_to_result_p99_ms": 53.3,
+    "gpu_forward_p99_ms": 24.4,
+    "dropped": 0,
+    "rejected": 0
+  },
+  {
+    "calls": 96,
+    "audio_s": 12.0,
+    "wall_s": 11.72,
+    "realtime_factor": 0.98,
+    "windows": 2112,
+    "windows_per_s": 180.2,
+    "mean_batch": 4.71,
+    "submit_to_result_p50_ms": 26.6,
+    "submit_to_result_p99_ms": 246.1,
+    "gpu_forward_p99_ms": 30.2,
+    "dropped": 0,
+    "rejected": 0
+  },
+  {
+    "calls": 128,
+    "audio_s": 12.0,
+    "wall_s": 11.79,
+    "realtime_factor": 0.98,
+    "windows": 2816,
+    "windows_per_s": 238.8,
+    "mean_batch": 4.2,
+    "submit_to_result_p50_ms": 29.0,
+    "submit_to_result_p99_ms": 52.4,
+    "gpu_forward_p99_ms": 12.7,
+    "dropped": 0,
+    "rejected": 0
+  },
+  {
+    "calls": 160,
+    "audio_s": 12.0,
+    "wall_s": 11.9,
+    "realtime_factor": 0.99,
+    "windows": 3520,
+    "windows_per_s": 295.7,
+    "mean_batch": 4.67,
+    "submit_to_result_p50_ms": 25.0,
+    "submit_to_result_p99_ms": 52.8,
+    "gpu_forward_p99_ms": 12.9,
+    "dropped": 0,
+    "rejected": 0
+  }
+]

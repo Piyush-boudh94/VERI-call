@@ -1,0 +1,35 @@
+{
+  "checkpoints/branch_Aindic5_seed0.pt": {
+    "gujarati_paired:eval_hindi": {
+      "eer": 0.06846289752650181,
+      "ci95": [
+        0.05997062978718092,
+        0.07878708387300032
+      ],
+      "n": 4424,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_Ahindich_seed0.pt": {
+    "gujarati_paired:eval_hindi": {
+      "eer": 0.198321554770318,
+      "ci95": [
+        0.18104230473545205,
+        0.2163166264531696
+      ],
+      "n": 4424,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_seed0.pt": {
+    "gujarati_paired:eval_hindi": {
+      "eer": 0.39444444444444443,
+      "ci95": [
+        0.37451794916656067,
+        0.41275049987100104
+      ],
+      "n": 4424,
+      "inverted": false
+    }
+  }
+}

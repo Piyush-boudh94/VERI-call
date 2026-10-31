@@ -1,0 +1,46 @@
+{
+  "device": "NVIDIA H200 MIG 1g.18gb",
+  "total_gib": 16.0,
+  "budget_gib": 5.0,
+  "precision": "fp16",
+  "weights_gib": 0.44,
+  "rows": [
+    {
+      "batch": 1,
+      "peak_gib": 0.502,
+      "activations_gib": 0.062,
+      "fits": true
+    },
+    {
+      "batch": 4,
+      "peak_gib": 0.538,
+      "activations_gib": 0.098,
+      "fits": true
+    },
+    {
+      "batch": 8,
+      "peak_gib": 0.599,
+      "activations_gib": 0.159,
+      "fits": true
+    },
+    {
+      "batch": 16,
+      "peak_gib": 0.719,
+      "activations_gib": 0.28,
+      "fits": true
+    },
+    {
+      "batch": 32,
+      "peak_gib": 0.964,
+      "activations_gib": 0.525,
+      "fits": true
+    },
+    {
+      "batch": 48,
+      "peak_gib": 1.209,
+      "activations_gib": 0.77,
+      "fits": true
+    }
+  ],
+  "recommended_max_batch": 48
+}

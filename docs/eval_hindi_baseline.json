@@ -1,0 +1,46 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.42287694974003465,
+      "ci95": [
+        0.4025901531849918,
+        0.4385055583316368
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.3461871750433275,
+      "ci95": [
+        0.3279696859132233,
+        0.36588731123236334
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_dann_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.37954939341421146,
+      "ci95": [
+        0.3609417087748963,
+        0.39851348021113747
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_mix_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.3825892857142857,
+      "ci95": [
+        0.3659409157019451,
+        0.40237029384756656
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  }
+}

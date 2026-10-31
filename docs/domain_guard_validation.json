@@ -1,0 +1,48 @@
+{
+  "reference": {
+    "A": {
+      "mean": -5.117371020552482,
+      "sd": 1.235071551683797
+    },
+    "A2": {
+      "mean": -7.090534507299045,
+      "sd": 2.8119278095538274
+    }
+  },
+  "results": {
+    "asvspoof_dev_bonafide": {
+      "tripped": false,
+      "calibration_suspect": false,
+      "reasons": [],
+      "windows": 85,
+      "branch_mean_llr": {
+        "A": -5.096,
+        "A2": -8.229
+      }
+    },
+    "rtcfake_en_bonafide": {
+      "tripped": true,
+      "calibration_suspect": true,
+      "reasons": [
+        "A and A2 disagree by 5.82 nats with opposite signs (A -4.58, A2 +1.24). They were fitted as correlated; opposite signs sustained over a call is the signature of one branch inverting under domain shift"
+      ],
+      "windows": 300,
+      "branch_mean_llr": {
+        "A": -4.58,
+        "A2": 1.237
+      }
+    },
+    "rtcfake_zh_bonafide": {
+      "tripped": true,
+      "calibration_suspect": true,
+      "reasons": [
+        "A mean LLR +3.08 sits 6.6 sd from the calibration distribution (mean -5.12, sd 1.24) -- the mapping is extrapolating"
+      ],
+      "windows": 300,
+      "branch_mean_llr": {
+        "A": 3.076,
+        "A2": 0.205
+      }
+    }
+  }
+}

@@ -1,0 +1,2305 @@
+{
+  "bonafide": [
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 21.18,
+      "changes": [],
+      "final_S_lo": -46.73439966725149,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 21.2509375,
+      "changes": [],
+      "final_S_lo": -51.22836127711293,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 16.21,
+      "changes": [],
+      "final_S_lo": -53.47103508458285,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 14.69,
+      "changes": [],
+      "final_S_lo": -48.4656296875217,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 19.35,
+      "changes": [],
+      "final_S_lo": -50.1676917380455,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 17.52,
+      "changes": [],
+      "final_S_lo": -55.1770380200555,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.56,
+      "changes": [],
+      "final_S_lo": -51.976248941621805,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 17.78,
+      "changes": [],
+      "final_S_lo": -50.6562451940468,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.06,
+      "changes": [],
+      "final_S_lo": -54.26833823397281,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 17.92,
+      "changes": [],
+      "final_S_lo": -51.6288360096144,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.57,
+      "changes": [],
+      "final_S_lo": -53.44684924655657,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 19.15,
+      "changes": [],
+      "final_S_lo": -49.8849750935707,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.59,
+      "changes": [],
+      "final_S_lo": -50.212867295386985,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.52,
+      "changes": [],
+      "final_S_lo": -51.73853921707152,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 22.66,
+      "changes": [],
+      "final_S_lo": -49.36202779952885,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 17.59,
+      "changes": [],
+      "final_S_lo": -55.41826641732969,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 19.6,
+      "changes": [],
+      "final_S_lo": -53.22847542604663,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 16.75,
+      "changes": [],
+      "final_S_lo": -39.20666190440768,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 19.77,
+      "changes": [],
+      "final_S_lo": -37.00345974935481,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 9.42,
+      "changes": [],
+      "final_S_lo": -49.48500713869094,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 10.4081875,
+      "changes": [],
+      "final_S_lo": -50.252723371372774,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 17.08,
+      "changes": [],
+      "final_S_lo": -49.75004681283312,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 16.99,
+      "changes": [],
+      "final_S_lo": -50.33996233151181,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 11.9275625,
+      "changes": [],
+      "final_S_lo": -50.10851314303733,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 13.83,
+      "changes": [],
+      "final_S_lo": -52.01197819697412,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 11.43,
+      "changes": [],
+      "final_S_lo": -47.45237599423301,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 18.54,
+      "changes": [],
+      "final_S_lo": -51.385418688687615,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 11.11,
+      "changes": [],
+      "final_S_lo": -48.19100905803589,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 12.23,
+      "changes": [],
+      "final_S_lo": -52.59988184378338,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 14.57,
+      "changes": [],
+      "final_S_lo": -54.22591326999712,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 11.6134375,
+      "changes": [],
+      "final_S_lo": -48.9907794587679,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 15.69,
+      "changes": [],
+      "final_S_lo": -48.05202140364556,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 13.02,
+      "changes": [],
+      "final_S_lo": -47.80602478381078,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 10.8,
+      "changes": [],
+      "final_S_lo": -42.87779502946039,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 15.15,
+      "changes": [],
+      "final_S_lo": -49.11237686544406,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 11.55475,
+      "changes": [],
+      "final_S_lo": -53.08176671828738,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 16.13,
+      "changes": [],
+      "final_S_lo": -44.89847222453487,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 14.64,
+      "changes": [],
+      "final_S_lo": -33.48510982904288,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 14.28,
+      "changes": [],
+      "final_S_lo": -57.52335889180544,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "bonafide",
+      "tier": 0,
+      "latch": 0,
+      "first_alert": null,
+      "duration": 15.52,
+      "changes": [],
+      "final_S_lo": -56.97905607212329,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    }
+  ],
+  "spoof": [
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 21.21425,
+      "changes": [],
+      "final_S_lo": 16.931956791287764,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 29.65225,
+      "changes": [],
+      "final_S_lo": 16.65427697884948,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 17.981,
+      "changes": [],
+      "final_S_lo": 17.69315629568356,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 18.472625,
+      "changes": [],
+      "final_S_lo": 17.812609841793805,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.6728125,
+      "changes": [],
+      "final_S_lo": 16.62769387121932,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 23.079375,
+      "changes": [],
+      "final_S_lo": 16.953476930769092,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 17.508625,
+      "changes": [],
+      "final_S_lo": 16.607325855430002,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 24.3811875,
+      "changes": [],
+      "final_S_lo": 17.393164306223234,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 21.5075,
+      "changes": [],
+      "final_S_lo": 17.628635568729116,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.034125,
+      "changes": [],
+      "final_S_lo": 16.28969877138074,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 22.162375,
+      "changes": [],
+      "final_S_lo": 16.638968831546673,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 24.6335,
+      "changes": [],
+      "final_S_lo": 17.45723961720676,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 19.045625,
+      "changes": [],
+      "final_S_lo": 17.586559498224904,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 14.52,
+      "changes": [],
+      "final_S_lo": 17.508728267168657,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 36.2349375,
+      "changes": [],
+      "final_S_lo": 15.532724986156174,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.20075,
+      "changes": [],
+      "final_S_lo": 16.470004053581853,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 21.0270625,
+      "changes": [],
+      "final_S_lo": 16.62799385419936,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 17.4939375,
+      "changes": [],
+      "final_S_lo": 17.524811490331086,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 27.4671875,
+      "changes": [],
+      "final_S_lo": 17.05708073385087,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 20.54,
+      "changes": [],
+      "final_S_lo": 16.495862726826548,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.199875,
+      "changes": [],
+      "final_S_lo": 17.749705050212516,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 24.0836875,
+      "changes": [],
+      "final_S_lo": 16.41408101072602,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.9386875,
+      "changes": [],
+      "final_S_lo": 16.454843315234445,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 21.8059375,
+      "changes": [],
+      "final_S_lo": 17.560508408548504,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 22.6994375,
+      "changes": [],
+      "final_S_lo": 17.641433908883588,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 27.2668125,
+      "changes": [],
+      "final_S_lo": 17.26151966137508,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 28.06525,
+      "changes": [],
+      "final_S_lo": 17.42446450934549,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 17.3240625,
+      "changes": [],
+      "final_S_lo": 16.690412598077167,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 32.9576875,
+      "changes": [],
+      "final_S_lo": 17.91395723058476,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 16.4546875,
+      "changes": [],
+      "final_S_lo": 16.388532808318352,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 26.5458125,
+      "changes": [],
+      "final_S_lo": 16.682000910738974,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 3.0,
+      "duration": 28.17625,
+      "changes": [],
+      "final_S_lo": 16.237038305578736,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 24.1155625,
+      "changes": [],
+      "final_S_lo": 16.526909364113333,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 20.864625,
+      "changes": [],
+      "final_S_lo": 16.90036961749564,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 18.125,
+      "changes": [],
+      "final_S_lo": 16.97828890921781,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 25.2039375,
+      "changes": [],
+      "final_S_lo": 17.582445205661298,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 19.8306875,
+      "changes": [],
+      "final_S_lo": 16.634245394785456,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 21.37,
+      "changes": [],
+      "final_S_lo": 16.639815641951017,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 23.71,
+      "changes": [],
+      "final_S_lo": 17.348970579202273,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    },
+    {
+      "label": "spoof",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 2.5,
+      "duration": 27.1845,
+      "changes": [],
+      "final_S_lo": 16.352233718790444,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ]
+    }
+  ],
+  "swap": [
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 23.0,
+      "duration": 42.39425,
+      "changes": [
+        22.0
+      ],
+      "final_S_lo": 16.596238943682277,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 21.18
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 23.5,
+      "duration": 50.9031875,
+      "changes": [
+        22.5
+      ],
+      "final_S_lo": 16.06075977163997,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 21.2509375
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.0,
+      "duration": 34.191,
+      "changes": [
+        17.5
+      ],
+      "final_S_lo": 17.455456545116675,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 16.21
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 17.0,
+      "duration": 33.162625,
+      "changes": [
+        16.0
+      ],
+      "final_S_lo": 16.47777006160618,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 14.69
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.5,
+      "duration": 40.0228125,
+      "changes": [
+        20.5
+      ],
+      "final_S_lo": 17.434256558955603,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 19.35
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.5,
+      "duration": 40.599375,
+      "changes": [
+        18.5
+      ],
+      "final_S_lo": 17.038892183000907,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 17.52
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 20.5,
+      "duration": 36.068625,
+      "changes": [
+        19.5
+      ],
+      "final_S_lo": 16.654438434756706,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.56
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.5,
+      "duration": 42.1611875,
+      "changes": [
+        18.5
+      ],
+      "final_S_lo": 16.608636812092445,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 17.78
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.0,
+      "duration": 39.5675,
+      "changes": [
+        19.5
+      ],
+      "final_S_lo": 17.63659700556475,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.06
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 20.0,
+      "duration": 37.954125,
+      "changes": [
+        19.0
+      ],
+      "final_S_lo": 16.82604854040332,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 17.92
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.5,
+      "duration": 40.732375,
+      "changes": [
+        20.0
+      ],
+      "final_S_lo": 16.598529645711473,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.57
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.0,
+      "duration": 43.7835,
+      "changes": [
+        20.0
+      ],
+      "final_S_lo": 17.398317776252185,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 19.15
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.5,
+      "duration": 37.635625,
+      "changes": [
+        20.0
+      ],
+      "final_S_lo": 17.538304695602477,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.59
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 21.0,
+      "duration": 33.04,
+      "changes": [
+        20.0
+      ],
+      "final_S_lo": 17.45914823645707,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.52
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 24.5,
+      "duration": 58.8949375,
+      "changes": [
+        23.5
+      ],
+      "final_S_lo": 16.951804149418184,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 22.66
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.5,
+      "duration": 37.79075,
+      "changes": [
+        18.5
+      ],
+      "final_S_lo": 16.74306835436818,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 17.59
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 22.0,
+      "duration": 40.6270625,
+      "changes": [
+        21.0
+      ],
+      "final_S_lo": 16.948184976302265,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 19.6
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.0,
+      "duration": 34.2439375,
+      "changes": [
+        18.0
+      ],
+      "final_S_lo": 17.558452506836115,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 16.75
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 22.5,
+      "duration": 47.2371875,
+      "changes": [
+        21.0
+      ],
+      "final_S_lo": 17.016440423395327,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 19.77
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 11.0,
+      "duration": 29.96,
+      "changes": [
+        10.0,
+        11.0
+      ],
+      "final_S_lo": 17.092339020063665,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 9.42
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 13.0,
+      "duration": 30.6080625,
+      "changes": [
+        11.5,
+        12.0
+      ],
+      "final_S_lo": 17.74633835930139,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 10.4081875
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 20.0,
+      "duration": 41.1636875,
+      "changes": [
+        18.5,
+        19.0
+      ],
+      "final_S_lo": 16.39735449207042,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 17.08
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.0,
+      "duration": 37.9286875,
+      "changes": [
+        18.0,
+        19.0
+      ],
+      "final_S_lo": 16.64707420280832,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 16.99
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 15.0,
+      "duration": 33.7335,
+      "changes": [
+        13.0,
+        14.0
+      ],
+      "final_S_lo": 17.556328045834302,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 11.9275625
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 16.0,
+      "duration": 36.5294375,
+      "changes": [
+        15.0,
+        16.0
+      ],
+      "final_S_lo": 16.548797910650503,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 13.83
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 15.0,
+      "duration": 38.6968125,
+      "changes": [
+        13.0,
+        13.0,
+        14.0
+      ],
+      "final_S_lo": 17.300008393918258,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 11.43
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 20.5,
+      "duration": 46.60525,
+      "changes": [
+        19.5,
+        21.0
+      ],
+      "final_S_lo": 16.404573512354055,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 18.54
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 13.0,
+      "duration": 28.4340625,
+      "changes": [
+        12.0,
+        13.0
+      ],
+      "final_S_lo": 16.51858007129633,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 11.11
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 14.0,
+      "duration": 45.1876875,
+      "changes": [
+        13.0,
+        14.0
+      ],
+      "final_S_lo": 17.851534598927145,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 12.23
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 17.0,
+      "duration": 31.0246875,
+      "changes": [
+        16.0,
+        17.0
+      ],
+      "final_S_lo": 17.422896958572093,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 14.57
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 14.0,
+      "duration": 38.15925,
+      "changes": [
+        12.5,
+        14.0
+      ],
+      "final_S_lo": 16.599544216762013,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 11.6134375
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 19.5,
+      "duration": 43.86625,
+      "changes": [
+        17.0,
+        18.0
+      ],
+      "final_S_lo": 17.52767636520722,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 15.69
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 15.0,
+      "duration": 37.1355625,
+      "changes": [
+        14.0,
+        15.0
+      ],
+      "final_S_lo": 16.594645728482114,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 13.02
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 14.5,
+      "duration": 31.664625,
+      "changes": [
+        12.0,
+        13.0
+      ],
+      "final_S_lo": 16.45386687812467,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 10.8
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 18.0,
+      "duration": 33.275,
+      "changes": [
+        16.5,
+        17.0
+      ],
+      "final_S_lo": 17.19208934167145,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 15.15
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 14.0,
+      "duration": 36.7586875,
+      "changes": [
+        13.0
+      ],
+      "final_S_lo": 16.869182427807612,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 11.55475
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 18.5,
+      "duration": 35.9606875,
+      "changes": [
+        17.5
+      ],
+      "final_S_lo": 16.434743142859666,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 16.13
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 16.5,
+      "duration": 36.01,
+      "changes": [
+        15.5
+      ],
+      "final_S_lo": 17.083193565030225,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 14.64
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 16.5,
+      "duration": 37.99,
+      "changes": [
+        15.5
+      ],
+      "final_S_lo": 17.14604610717981,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 14.28
+    },
+    {
+      "label": "swap",
+      "tier": 3,
+      "latch": 3,
+      "first_alert": 18.0,
+      "duration": 42.7045,
+      "changes": [
+        17.0
+      ],
+      "final_S_lo": 16.242432011194534,
+      "subsets_seen": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "A2"
+        ]
+      ],
+      "onset": 15.52
+    }
+  ]
+}

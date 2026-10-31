@@ -1,0 +1,117 @@
+{
+  "asvspoof2019_la": {
+    "status": "complete",
+    "repo": "Bisher/ASVspoof_2019_LA",
+    "path": "/tmp/vericall-data/asvspoof2019_la",
+    "updated": "2026-09-22 15:51:42",
+    "bytes": 7543125717,
+    "files": 15
+  },
+  "wavefake": {
+    "status": "complete",
+    "repo": "ajaykarthick/wavefake-audio",
+    "path": "/scratch/vericall-data/wavefake",
+    "updated": "2026-09-23 16:11:08",
+    "bytes": 30277610334,
+    "files": 399
+  },
+  "rtcfake": {
+    "status": "complete",
+    "repo": "JunXueTech/RTCFake",
+    "path": "/tmp/vericall-data/rtcfake",
+    "updated": "2026-09-17 18:19:01",
+    "error": "Got: ConnectError: [Errno -5] No address associated with hostname\nAn error happened while trying to locate the files on the Hub, and we cannot find the appropriate snapshot folder for the specified re",
+    "bytes": 25091625494,
+    "files": 15231,
+    "attempt": 1
+  },
+  "in_the_wild": {
+    "status": "complete",
+    "bytes": 8161489023,
+    "total": 8161489312,
+    "updated": "2026-09-22 16:31:36",
+    "path": "/tmp/vericall-data/in_the_wild_inner.zip",
+    "sha256": "00a271adf95f6f64dc03701c01f1cef7170a4a40a807e96d2b3311c692fedcd0",
+    "wav_files": 31779
+  },
+  "kathbath_valid": {
+    "status": "complete",
+    "bytes": 3590031360,
+    "total": 3590031360,
+    "updated": "2026-09-23 11:33:54",
+    "path": "/scratch/vericall-data/kathbath_valid.tar",
+    "sha256": "691c45ee6297d155664d104d732066e5701418f3f9950330fc416d24fd1fd43e"
+  },
+  "indicsynth_hi": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/tmp/vericall-data/indicsynth_hi",
+    "updated": "2026-09-22 20:59:44",
+    "bytes": 8424786072,
+    "files": 54
+  },
+  "kathbath_testkn": {
+    "status": "complete",
+    "bytes": 3587717120,
+    "total": 3587717120,
+    "updated": "2026-09-23 11:42:19",
+    "path": "/scratch/vericall-data/kathbath_testkn.tar",
+    "sha256": "3e1d31a8d7385b27fe1968b66c439dbad2cb5c0ca2f08fd5742e247e45d51339"
+  },
+  "codecfake": {
+    "status": "complete",
+    "repo": "ajaykarthick/codecfake-audio",
+    "path": "/scratch/vericall-data/codecfake",
+    "updated": "2026-09-23 10:37:07",
+    "bytes": 18398048078,
+    "files": 1149
+  },
+  "indicsynth_bn": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_bn",
+    "updated": "2026-09-23 11:45:54",
+    "bytes": 6712283326,
+    "files": 39
+  },
+  "indicsynth_mr": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_mr",
+    "updated": "2026-09-23 11:47:51",
+    "bytes": 3387718745,
+    "files": 39
+  },
+  "indicsynth_ta": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_ta",
+    "updated": "2026-09-23 11:55:26",
+    "bytes": 9192187041,
+    "files": 39
+  },
+  "indicsynth_te": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_te",
+    "updated": "2026-09-23 11:59:05",
+    "bytes": 7457314480,
+    "files": 39
+  },
+  "indicsynth_gu": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_gu",
+    "updated": "2026-09-23 12:04:13",
+    "bytes": 7754351639,
+    "files": 39
+  },
+  "echofake": {
+    "status": "complete",
+    "repo": "EchoFake/EchoFake",
+    "path": "/scratch/vericall-data/echofake",
+    "updated": "2026-09-23 15:33:42",
+    "bytes": 3263832123,
+    "files": 36
+  }
+}

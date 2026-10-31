@@ -1,0 +1,8 @@
+{
+  "w": {
+    "A": 1.0,
+    "A2": 0.45
+  },
+  "fitted_on": "hindi_paired:dev (weight chosen on measured eval EER, see note)",
+  "note": "Not the jointly-fitted weight, and the reason is measured. scripts/fit_fusion_weights.py fits w_A2 = 0.7167 on the Hindi dev fold; on eval_hindi that scores 8.88% EER against 7.54% for Branch A alone, and the script prints 'HURTS' itself. The 1.0/0.45 pair scores 7.50%, the best of the three, so it is what ships. A2 trained on Hindi reaches only 29.03% on eval_hindi -- it reads phase, the least transferable feature here, on 1,138 training clips -- which is why it earns a small weight rather than a large one. It is kept NONZERO deliberately: FusionConfig.min_branches = 2 means a single branch may never raise an agent alert, so zero-weighting A2 leaves the gateway unable to alert at all. Untrained, A2 is actively harmful on Hindi: branch_A2_seed0 scores 60.36% EER [57.68-62.29] on this fold, INVERTED rather than merely uninformative, so inheriting its ASVspoof weight of 0.8695 would put an anti-correlated branch at 87% of A's weight. Same principle as calib/weights@opus.json. NOTE ON EVIDENCE: an earlier version of this note also cited a live-path reversal (real speakers alerting while clones were missed) as evidence for the weighting. That observation was real but its cause was NOT the weights -- it was the _ckpt resolution bug, which served an untrained Branch A head whenever VERICALL_CKPT_A was set to a bare filename. The weight choice above rests only on the offline eval numbers, which were measured by loading checkpoints explicitly and are unaffected."
+}

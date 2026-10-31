@@ -1,0 +1,27 @@
+{
+  "in_the_wild": {
+    "status": "complete",
+    "bytes": 8161489023,
+    "total": 8161489312,
+    "updated": "2026-09-17 12:34:59",
+    "path": "/tmp/vericall-data/in_the_wild_inner.zip",
+    "sha256": "00a271adf95f6f64dc03701c01f1cef7170a4a40a807e96d2b3311c692fedcd0",
+    "wav_files": 31779
+  },
+  "echofake": {
+    "status": "complete",
+    "repo": "EchoFake/EchoFake",
+    "path": "/tmp/vericall-data/echofake",
+    "updated": "2026-09-17 12:36:19",
+    "bytes": 3263832125,
+    "files": 36
+  },
+  "codecfake": {
+    "status": "complete",
+    "repo": "ajaykarthick/codecfake-audio",
+    "path": "/tmp/vericall-data/codecfake",
+    "updated": "2026-09-17 12:44:41",
+    "bytes": 18398048089,
+    "files": 1149
+  }
+}

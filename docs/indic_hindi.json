@@ -1,0 +1,56 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "bona_mean": -3.337678933289735,
+    "hindi_mean": -2.998267677250008,
+    "n_hindi": 3000,
+    "n_bona": 979,
+    "operating_points": {
+      "0.01": {
+        "threshold": 20.579285011291507,
+        "actual_fpr": 0.010214504596527068,
+        "recall": 0.009666666666666667
+      },
+      "0.05": {
+        "threshold": 13.890170383453368,
+        "actual_fpr": 0.05005107252298264,
+        "recall": 0.05333333333333334
+      },
+      "0.10": {
+        "threshold": 10.318056297302247,
+        "actual_fpr": 0.10010214504596528,
+        "recall": 0.09566666666666666
+      }
+    },
+    "per_generator_at_5pct_fpr": {
+      "freevc24": 0.004666666666666667,
+      "xtts_v2": 0.102
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "bona_mean": 2.2007615160771605,
+    "hindi_mean": 7.715550425459941,
+    "n_hindi": 3000,
+    "n_bona": 979,
+    "operating_points": {
+      "0.01": {
+        "threshold": 16.639380264282227,
+        "actual_fpr": 0.010214504596527068,
+        "recall": 0.03166666666666667
+      },
+      "0.05": {
+        "threshold": 16.12973823547363,
+        "actual_fpr": 0.05005107252298264,
+        "recall": 0.13866666666666666
+      },
+      "0.10": {
+        "threshold": 15.510313987731934,
+        "actual_fpr": 0.10010214504596528,
+        "recall": 0.267
+      }
+    },
+    "per_generator_at_5pct_fpr": {
+      "freevc24": 0.21666666666666667,
+      "xtts_v2": 0.06066666666666667
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "fitted_for": {
+    "A": "branch_Ahindich_seed0.pt",
+    "A2": "branch_A2hindich_seed0.pt"
+  },
+  "dataset": "hindi_paired",
+  "fold": "calib",
+  "rows": 1856
+}

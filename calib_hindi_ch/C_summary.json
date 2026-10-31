@@ -1,0 +1,9 @@
+{
+  "asv_eer": 0.07975,
+  "a": 1.0219377424155327,
+  "b": 0.42834739349610695,
+  "cohort_size": 1500,
+  "cohort_speakers": 20,
+  "trials": 8000,
+  "note": "identity signal; never enters the spoof score"
+}

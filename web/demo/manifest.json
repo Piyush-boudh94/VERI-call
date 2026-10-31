@@ -1,0 +1,25 @@
+{
+  "sample_rate": 16000,
+  "note": "Real ASVspoof 2019 LA dev audio. Not synthetic, not a mock.",
+  "clips": [
+    {
+      "file": "genuine.wav",
+      "seconds": 21.18,
+      "speaker": "LA_0069",
+      "attack": "-"
+    },
+    {
+      "file": "spoofed.wav",
+      "seconds": 21.21,
+      "speaker": "LA_0069",
+      "attack": "A01"
+    },
+    {
+      "file": "midcall_swap.wav",
+      "seconds": 42.39,
+      "speaker": "LA_0069->LA_0069",
+      "attack": "splice @ 21.2s"
+    }
+  ],
+  "splice_s": 21.18
+}

@@ -1,0 +1,8 @@
+{
+  "w": {
+    "A": 1.0,
+    "A2": 0.421
+  },
+  "fitted_on": "asvspoof2019_la:calib@opus24k",
+  "note": "Weights for the opus bucket. A2 is down-weighted because Opus does not preserve phase and A2 reads phase: its min_Cllr through this channel is 0.56 against 0.05 clean, so refitting its Platt mapping fixes the calibration but cannot recover the information."
+}

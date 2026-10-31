@@ -1,0 +1,84 @@
+# A GPU pod for VeriCall.
+#
+# Why this file exists. Every heavy step in this project -- WavLM forward
+# passes, feature extraction, training -- was historically run inside a
+# Kubernetes pod via scripts/pod.sh, because bmu-headnode has NO GPU:
+# nvidia-smi is not installed there and torch.cuda.is_available() is False.
+# The pod that held the namespace quota was a `wmamba-dev` Deployment belonging
+# to the user's other project, and this project was documented as its
+# co-tenant with a standing rule never to create, modify or restart it.
+#
+# That deployment is gone. `kubectl get all` in the namespace shows only two
+# Completed Jobs from 46 days ago, and the quota reads 0/16 CPU, 0/32Gi and
+# **0/1 of the MIG profile** -- the GPU has been sitting idle while
+# extraction ran on head-node CPU at 5 clips/s. The co-tenant rule protected a
+# running deployment; there is nothing running to protect, so this project gets
+# its own pod under its own name rather than borrowing someone else's.
+#
+# **The MIG profile changed on 2026-10-31.** The quota used to allow one
+# mig-1g.18gb and now allows one mig-2g.35gb, with 1g at zero -- so the
+# original request stopped scheduling entirely rather than degrading. The
+# slice is now 32.5 GiB and about 2/7 of an H200 instead of 1/7. Run
+# `kubectl describe resourcequota user-quota` before trusting this line: it
+# has moved once and can move again.
+#
+# Slurm is not an alternative: sinfo fails at DNS SRV lookup and cannot reach a
+# config source, so there is no batch path to a GPU on this cluster.
+#
+# The spec is lifted from the job that demonstrably ran here (wmamba-phase2),
+# so the image, securityContext uid/gid and NFS server are known-good rather
+# than guessed.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vericall-gpu
+  namespace: dgx-s-bmu-cse-240577-restricted
+  labels:
+    app: vericall-gpu
+    project: vericall
+spec:
+  restartPolicy: Never
+  securityContext:
+    runAsUser: 1109
+    runAsGroup: 1109
+    fsGroup: 1109
+  containers:
+  - name: dev
+    image: pytorch/pytorch:2.4.0-cuda12.4-cudnn9-runtime
+    imagePullPolicy: IfNotPresent
+    # Idle and long-lived, so scripts/pod.sh can exec into it repeatedly. A
+    # Job would exit and take the warm page cache and the corpora with it.
+    command: ["bash", "-lc", "sleep infinity"]
+    workingDir: /home/dgx-s-bmu-cse-240577/SIH final
+    env:
+    - {name: HOME,               value: /home/dgx-s-bmu-cse-240577}
+    - {name: USER,               value: dgx-s-bmu-cse-240577}
+    - {name: LOGNAME,            value: dgx-s-bmu-cse-240577}
+    - {name: PYTHONUNBUFFERED,   value: "1"}
+    - {name: PYTHONDONTWRITEBYTECODE, value: "1"}
+    - {name: TORCHINDUCTOR_CACHE_DIR, value: /home/dgx-s-bmu-cse-240577/.cache/torchinductor}
+    - {name: TRITON_CACHE_DIR,   value: /home/dgx-s-bmu-cse-240577/.cache/triton}
+    # torch sizes its intra-op pool from the core count. With 16 cores and
+    # concurrent work that oversubscribes badly -- one line was worth ~20x on
+    # tail latency when this was measured for serving.
+    - {name: OMP_NUM_THREADS,    value: "8"}
+    resources:
+      requests: {cpu: "16", memory: 32Gi, nvidia.com/mig-2g.35gb: "1"}
+      limits:   {cpu: "16", memory: 32Gi, nvidia.com/mig-2g.35gb: "1"}
+    volumeMounts:
+    - {mountPath: /home/dgx-s-bmu-cse-240577, name: home}
+    - {mountPath: /dev/shm, name: dshm}
+    # Node-local scratch. This is the storage the docs call the 26 TB overlay,
+    # and it is the reason corpora belong here and not on the head node, whose
+    # /tmp is a 20 GB filesystem that has already forced three delete-and-
+    # refetch cycles of multi-gigabyte datasets.
+    - {mountPath: /scratch, name: scratch}
+  volumes:
+  - name: home
+    nfs:
+      path: /home/dgx-s-bmu-cse-240577
+      server: 10.141.255.254
+  - name: dshm
+    emptyDir: {medium: Memory, sizeLimit: 8Gi}
+  - name: scratch
+    emptyDir: {}

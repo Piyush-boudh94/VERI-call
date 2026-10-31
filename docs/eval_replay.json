@@ -1,0 +1,62 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "echofake:eval_replay": {
+      "eer": 0.35278413424866517,
+      "ci95": [
+        0.33920847725567455,
+        0.36714683821532385
+      ],
+      "n": 3966,
+      "inverted": false
+    },
+    "echofake:eval_synth_echo": {
+      "eer": 0.5773809523809523,
+      "ci95": [
+        0.5586412499443876,
+        0.597033504958531
+      ],
+      "n": 2668,
+      "inverted": true
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "echofake:eval_replay": {
+      "eer": 0.3898809523809524,
+      "ci95": [
+        0.37198431997316783,
+        0.40648033737480227
+      ],
+      "n": 3966,
+      "inverted": false
+    },
+    "echofake:eval_synth_echo": {
+      "eer": 0.25892857142857145,
+      "ci95": [
+        0.24106313525746637,
+        0.2756650866104869
+      ],
+      "n": 2668,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_dann_seed0.pt": {
+    "echofake:eval_replay": {
+      "eer": 0.3367658276125095,
+      "ci95": [
+        0.31949959562033686,
+        0.3518070100228334
+      ],
+      "n": 3966,
+      "inverted": false
+    },
+    "echofake:eval_synth_echo": {
+      "eer": 0.27529761904761907,
+      "ci95": [
+        0.25757773350858454,
+        0.2893869516310461
+      ],
+      "n": 2668,
+      "inverted": false
+    }
+  }
+}

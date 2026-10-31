@@ -1,0 +1,6 @@
+772cf53afabd267a6c5a37e3285af3fbff5d4604
+export: a laptop-sized runtime tarball beside the full-history bundle (2026-10-31)
+
+Runtime export: no git history, and only the checkpoints the profiles
+in profiles.json name. To develop rather than demo, use the git bundle
+from scripts/make_bundle.sh instead.

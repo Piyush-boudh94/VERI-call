@@ -1,0 +1,8 @@
+{
+  "w": {
+    "A": 1.0,
+    "A2": 0.8695
+  },
+  "fitted_on": "asvspoof2019_la:calib",
+  "note": "Normalised to w_A = 1; the overall scale is absorbed by the subset (alpha, scale). Valid only for the branch calibrations in this directory."
+}

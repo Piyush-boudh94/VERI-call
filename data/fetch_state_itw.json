@@ -1,0 +1,10 @@
+{
+  "in_the_wild": {
+    "status": "complete",
+    "bytes": 8161489312,
+    "total": 8161489312,
+    "updated": "2026-09-04 10:58:17",
+    "path": "/tmp/vericall-data/in_the_wild.zip",
+    "sha256": "00a271adf95f6f64dc03701c01f1cef7170a4a40a807e96d2b3311c692fedcd0"
+  }
+}

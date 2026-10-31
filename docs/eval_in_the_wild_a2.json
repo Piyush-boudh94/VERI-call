@@ -1,0 +1,24 @@
+{
+  "checkpoints/branch_A2_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.5065069200578393,
+      "ci95": [
+        0.5044307304078666,
+        0.5089743317158457
+      ],
+      "n": 5000,
+      "inverted": true
+    }
+  },
+  "checkpoints/branch_A2_rtc_seed0.pt": {
+    "in_the_wild:eval_in_the_wild": {
+      "eer": 0.3536,
+      "ci95": [
+        0.33880489847184425,
+        0.3666216756361856
+      ],
+      "n": 5000,
+      "inverted": false
+    }
+  }
+}

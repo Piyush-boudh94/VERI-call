@@ -1,0 +1,90 @@
+# Runtime + evaluation dependencies.
+#
+# torch/torchaudio are pinned to the versions every checkpoint in this repo was
+# ACTUALLY trained and calibrated against, measured from the environment that
+# produced them rather than assumed:
+#
+#     python 3.12.12   torch 2.13.0+cu130   torchaudio 2.11.0+cu130
+#
+# This file previously pinned torch==2.4.0 with a comment claiming that was the
+# version the checkpoints were calibrated against. It was not, and nothing ever
+# checked: the pin and the environment had drifted apart, so `pip install -r
+# requirements.txt` on a fresh machine would have installed a torch nine
+# releases away from the one every number in docs/RESULTS.md was measured on.
+# run_local.py now compares the running torch against this pin and warns, so
+# the two cannot drift silently again.
+#
+# The +cu130 local version is deliberately NOT pinned here, because the right
+# CUDA build depends on the target machine's driver. On Linux the default PyPI
+# wheel bundles CUDA and works; on Windows the default wheel is CPU-ONLY and
+# the demo will not keep up with real-time audio. See docs/LOCAL_DEPLOYMENT.md
+# for the per-platform install line.
+# 2.4.0 is what PRODUCED the weights: every checkpoint in checkpoints/ was
+# trained in the GPU pod (deploy/gpu-pod.yaml, image
+# pytorch/pytorch:2.4.0-cuda12.4-cudnn9-runtime). An earlier edit repinned this
+# to 2.13.0 after measuring the HEAD NODE -- which is only where serving and
+# offline evaluation run, so it recorded the consumer and not the producer.
+#
+# Both are validated, on different halves of the project:
+#   torch 2.4.0  + torchaudio 2.4.0   training, in the pod, on the MIG slice
+#   torch 2.13.0 + torchaudio 2.11.0  serving and eval, on bmu-headnode, CPU
+#
+# The checkpoints are state_dicts of tensors and load under either, which is
+# why the mismatch went unnoticed. run_local.py accepts either and warns on
+# anything else.
+torch==2.4.0
+torchaudio==2.4.0
+
+# Everything below is pinned to the versions measured in the environment that
+# passes the suite and `run_local.py --check`, with importlib.metadata rather
+# than assumed. They were unpinned until 2026-09-22, so `pip install -r
+# requirements.txt` on a fresh machine resolved them to whatever was newest
+# that day -- the same class of silent drift the torch pin above exists to
+# stop.
+#
+# A correction to a claim that was here: the previous comment said
+# `transformers` "owns the WavLM readout whose layer index every Branch A
+# number depends on". It does not. Branch A's frontend is
+# torchaudio.pipelines.WAVLM_BASE (vericall/branches/a_ssl.py::_load_bundle);
+# `transformers` is imported by nothing in vericall/, scripts/ or tests/. It
+# has been removed -- see the models section.
+#
+# To relax one deliberately, replace `==` with `>=` and say why here.
+
+# serving
+fastapi==0.124.2
+uvicorn[standard]==0.38.0
+websockets==16.1.1
+
+# numerics and audio I/O
+numpy==2.2.6
+scipy==1.18.0
+soundfile==0.14.0
+pyarrow==25.0.1
+
+# models
+#
+# `transformers` was listed here and imported by NOTHING. It was not merely
+# dead weight: it requires torch >= 2.5, so in the training pod (torch 2.4.0)
+# it printed "Disabling PyTorch because PyTorch >= 2.5 is required" -- which
+# reads like a broken install and is noise in every log. Removed.
+speechbrain==1.1.1
+
+# calibration and fusion weight fitting (LogisticRegression)
+scikit-learn==1.9.0
+
+# corpus fetching
+huggingface-hub==1.31.0
+
+# tests
+pytest==9.1.1
+
+# OPTIONAL -- the Opus channel only.
+#
+# vericall/data/opus.py round-trips audio through real libopus to measure the
+# codec WebRTC actually uses. It is not imported by the served gateway, only
+# by scripts/measure_opus_channel.py and tests/test_opus.py (which skips
+# without it), so it is left out of the pinned set above: a laptop running the
+# demo does not need it, and PyAV is a large wheel.
+#
+#   pip install av

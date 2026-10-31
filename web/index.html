@@ -1,0 +1,520 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>VeriCall — live call risk</title>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--dim:#8b949e;
+        --ok:#3fb950;--warn:#d29922;--bad:#f85149;--accent:#58a6ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:14px/1.5 ui-sans-serif,system-ui,-apple-system,sans-serif}
+  header{padding:14px 20px;border-bottom:1px solid var(--line);
+         display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.2px}
+  .sub{color:var(--dim);font-size:12px}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px;display:grid;
+        grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .card h2{font-size:11px;text-transform:uppercase;letter-spacing:.8px;
+           color:var(--dim);margin:0 0 12px;font-weight:600}
+  .full{grid-column:1/-1}
+  .risk{font-size:52px;font-weight:650;line-height:1;font-variant-numeric:tabular-nums}
+  .risk small{font-size:15px;color:var(--dim);font-weight:400;margin-left:8px}
+  .trend{font-size:12px;color:var(--dim);margin-top:6px}
+  .pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;
+        font-weight:600;letter-spacing:.3px}
+  .t0{background:#1c2b1e;color:var(--ok)} .t1{background:#2d2610;color:var(--warn)}
+  .t2{background:#3a2317;color:#ff9d5c} .t3{background:#3d1618;color:var(--bad)}
+  button{background:var(--accent);color:#04121f;border:0;border-radius:6px;
+         padding:8px 14px;font-weight:600;cursor:pointer;font-size:13px}
+  button:disabled{opacity:.45;cursor:default}
+  button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+  canvas{width:100%;height:110px;display:block}
+  table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  td{padding:4px 0;font-size:13px} td.n{text-align:right;color:var(--dim)}
+  .bar{height:6px;background:#21262d;border-radius:3px;overflow:hidden;margin-top:3px}
+  .bar i{display:block;height:100%;border-radius:3px}
+  #alert{display:none;border-color:var(--bad);background:#2a1416}
+  #alert.on{display:block}
+  .kv{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}
+  .kv span:last-child{color:var(--dim);font-variant-numeric:tabular-nums}
+  .warnbar{background:#3d1618;color:#ffb4ae;padding:8px 20px;font-size:12px;display:none}
+  .warnbar.on{display:block}
+</style>
+
+<header>
+  <h1>VeriCall</h1>
+  <span class="sub">real-time voice-cloning detection</span>
+  <span style="flex:1"></span>
+  <span class="sub" id="conn">disconnected</span>
+</header>
+<div class="warnbar" id="warnbar"></div>
+
+<div class="wrap">
+  <div class="card">
+    <h2>Call risk</h2>
+    <div class="risk" id="risk">--<small>nats</small></div>
+    <div class="trend" id="trend">idle</div>
+    <div style="margin-top:12px">
+      <span class="pill t0" id="tier">tier 0 · monitor</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Confidence</h2>
+    <div class="kv"><span id="conflevel">--</span><span id="confscore"></span></div>
+    <div class="bar"><i id="confbar" style="width:0;background:var(--accent)"></i></div>
+    <div class="trend" id="confreason" style="margin-top:10px">--</div>
+  </div>
+
+  <div class="card full">
+    <h2>Risk trajectory <span style="color:var(--dim);font-weight:400;
+        text-transform:none;letter-spacing:0">— decisions act on the lower bound</span></h2>
+    <canvas id="plot"></canvas>
+  </div>
+
+  <div class="card">
+    <h2>Branch contributions</h2>
+    <table id="branches"><tr><td class="n" colspan="2">no data</td></tr></table>
+    <div class="trend" id="identity" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card">
+    <h2>Source</h2>
+    <div id="clips" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <button id="mic">🎤 Live microphone</button>
+      <input type="file" id="file" accept="audio/*" style="font-size:12px;max-width:190px">
+      <button class="ghost" id="stop" disabled>Stop</button>
+    </div>
+    <div class="trend" id="srcnote" style="margin-top:10px">
+      Streams real audio at wall-clock speed, 16&nbsp;kHz int16, 0.5&nbsp;s per frame.
+    </div>
+  </div>
+
+  <div class="card full">
+    <h2>Call history
+      <button class="ghost" id="hrefresh" style="float:right;font-size:11px;padding:3px 8px">Refresh</button>
+      <label style="float:right;font-size:11px;margin-right:10px;color:var(--dim)">
+        <input type="checkbox" id="honly"> alerted only</label>
+    </h2>
+    <div class="trend" id="hstats" style="margin-bottom:8px"></div>
+    <div id="hbody" style="font-size:12px"></div>
+    <div id="htimeline" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card full" id="alert">
+    <h2 style="color:var(--bad)">Alert</h2>
+    <div id="alertbody"></div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const SR = 16000, FRAME = 0.5;
+let ws = null, timer = null, hist = [], changes = [], t0 = 0;
+
+const ACTIONS = {0:"monitor",1:"step-up verification",2:"agent alert",3:"fraud desk"};
+
+// This page is served BY the gateway, so it talks to its own origin. It used
+// to hardcode ws://<host>:8001, which was wrong twice: over https:// a ws://
+// socket is mixed content and the browser blocks it outright, and a gateway
+// started with --port 8080 served a page that could only ever dial 8001.
+const ORIGIN = location.origin;
+const WSBASE = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
+
+function setConn(s, bad){ $("conn").textContent = s; $("conn").style.color = bad ? "var(--bad)" : "var(--dim)"; }
+function warn(msg){ const w=$("warnbar"); if(!msg){w.classList.remove("on");return;} w.textContent=msg; w.classList.add("on"); }
+
+function draw(){
+  const c = $("plot"), dpr = devicePixelRatio || 1;
+  c.width = c.clientWidth * dpr; c.height = c.clientHeight * dpr;
+  const g = c.getContext("2d"); g.scale(dpr, dpr);
+  const W = c.clientWidth, H = c.clientHeight;
+  g.clearRect(0,0,W,H);
+  if(hist.length < 2) return;
+
+  const lo = Math.min(-6, ...hist.map(p=>p.risk)) , hi = Math.max(6, ...hist.map(p=>p.risk));
+  const y = v => H - 6 - (v - lo)/(hi - lo) * (H - 12);
+  const x = i => 4 + i/(hist.length-1) * (W - 8);
+
+  // zero line
+  g.strokeStyle = "#30363d"; g.lineWidth = 1; g.beginPath();
+  g.moveTo(0, y(0)); g.lineTo(W, y(0)); g.stroke();
+
+  // change points
+  g.strokeStyle = "#d29922"; g.setLineDash([3,3]);
+  changes.forEach(ct => {
+    const i = hist.findIndex(p => p.t >= ct); if(i < 0) return;
+    g.beginPath(); g.moveTo(x(i), 0); g.lineTo(x(i), H); g.stroke();
+  });
+  g.setLineDash([]);
+
+  g.lineWidth = 2; g.beginPath();
+  hist.forEach((p,i) => i ? g.lineTo(x(i), y(p.risk)) : g.moveTo(x(i), y(p.risk)));
+  const last = hist[hist.length-1].risk;
+  g.strokeStyle = last > 4 ? "#f85149" : last > 1 ? "#d29922" : "#3fb950";
+  g.stroke();
+}
+addEventListener("resize", draw);
+
+function render(s){
+  if(s.risk === undefined) return;
+  const t = s.elapsed_s ?? 0;
+  hist.push({t, risk: s.risk});
+  if(s.changed_at != null && !changes.includes(s.changed_at)) changes.push(s.changed_at);
+
+  $("risk").innerHTML = (s.risk>=0?"+":"") + s.risk.toFixed(2) + "<small>nats</small>";
+  const prev = hist.length>1 ? hist[hist.length-2].risk : s.risk;
+  const d = s.risk - prev;
+  $("trend").textContent =
+    `${t.toFixed(1)}s · ${d>0.05?"climbing":d<-0.05?"falling":"steady"} · meter ${s.meter?.toFixed(2)} nats/s`;
+
+  const tier = s.tier ?? 0;
+  const el = $("tier"); el.className = "pill t"+tier;
+  el.textContent = `tier ${tier} · ${s.action || ACTIONS[tier]}`;
+
+  const c = s.confidence || {};
+  $("conflevel").textContent = c.level || "--";
+  $("confscore").textContent = c.score!=null ? c.score.toFixed(2) : "";
+  $("confbar").style.width = ((c.score||0)*100).toFixed(0)+"%";
+  $("confbar").style.background = c.level==="HIGH"?"var(--ok)":c.level==="MEDIUM"?"var(--warn)":"var(--bad)";
+  $("confreason").textContent = c.reason || "";
+
+  const b = s.branches || {}, act = s.active_branches || [];
+  const keys = Object.keys(b);
+  $("branches").innerHTML = keys.length ? keys.map(k=>{
+    const v = b[k], mag = Math.min(1, Math.abs(v)/12);
+    return `<tr><td>${k}${act.includes(k)?"":" <span style='color:var(--dim)'>(stale)</span>"}
+      <div class="bar"><i style="width:${(mag*100).toFixed(0)}%;background:${v>0?"var(--bad)":"var(--ok)"}"></i></div>
+      </td><td class="n">${v>=0?"+":""}${v.toFixed(2)}</td></tr>`;
+  }).join("") : "<tr><td class='n' colspan=2>no data</td></tr>";
+
+  $("identity").textContent = s.enrolled
+    ? `identity LLR ${s.identity_llr?.toFixed(2) ?? "--"} (never part of the spoof score)`
+    : "no enrolled voiceprint — identity branch used for turn detection only";
+
+  if((s.alerts||[]).length){
+    const a = s.alerts[s.alerts.length-1];
+    $("alert").classList.add("on");
+    $("alertbody").innerHTML =
+      `<b>Tier ${a.tier}</b> — ${a.reason || ACTIONS[a.tier]} at ${a.at}s.
+       Risk ${s.risk.toFixed(2)} nats, confidence ${c.level}.`;
+  }
+  draw();
+}
+
+async function toMono16k(buf){
+  const ctx = new (window.AudioContext||window.webkitAudioContext)();
+  const decoded = await ctx.decodeAudioData(buf);
+  const off = new OfflineAudioContext(1, Math.ceil(decoded.duration*SR), SR);
+  const src = off.createBufferSource(); src.buffer = decoded;
+  src.connect(off.destination); src.start();
+  const out = await off.startRendering();
+  await ctx.close();
+  return out.getChannelData(0);
+}
+
+function reset(){
+  hist = []; changes = []; t0 = performance.now();
+}
+
+function stop(){
+  if(timer){ clearInterval(timer); timer=null; }
+  if(ws){ ws.close(); ws=null; }
+  // The call just ended, so its row exists now. Slight delay: close_call runs
+  // in the server's finally block, which races a refresh fired synchronously.
+  setTimeout(loadHistory, 600);
+  $("stop").disabled = true;
+  document.querySelectorAll("#clips button").forEach(b=>b.disabled=false);
+  $("file").disabled = false;
+  setConn("disconnected");
+}
+
+async function start(name, pcm){
+  stop();
+  reset();
+  $("alert").classList.remove("on");
+  document.querySelectorAll("#clips button").forEach(b=>b.disabled=true);
+  $("file").disabled = true; $("stop").disabled = false;
+  $("srcnote").textContent = `${name} — ${(pcm.length/SR).toFixed(1)}s`;
+
+  const id = "call-" + Date.now().toString(36);
+  // The gateway requires a token whenever VERICALL_AUTH_TOKEN is set, which any
+  // real deployment does. Without this the page just showed "connection error"
+  // and gave the operator nothing to go on. ?token= in the query string rather
+  // than a header because the browser WebSocket API cannot set headers on the
+  // upgrade request -- the standard workaround, and the reason the gateway
+  // accepts either.
+  const token = new URLSearchParams(location.search).get("token")
+              || localStorage.getItem("vericall_token") || "";
+  const q = token ? `?token=${encodeURIComponent(token)}` : "";
+  ws = new WebSocket(`${WSBASE}/ws/${id}${q}`);
+  ws.binaryType = "arraybuffer";
+
+  ws.onopen = () => {
+    setConn("streaming " + id);
+    let i = 0, step = SR*FRAME;
+    timer = setInterval(() => {
+      if(i >= pcm.length){ clearInterval(timer); timer=null; setConn("finished"); return; }
+      const slice = pcm.subarray(i, i+step); i += step;
+      const pcm16 = new Int16Array(slice.length);
+      for(let k=0;k<slice.length;k++){
+        const v = Math.max(-1, Math.min(1, slice[k]));
+        pcm16[k] = v < 0 ? v*0x8000 : v*0x7fff;
+      }
+      if(ws && ws.readyState===1) ws.send(pcm16.buffer);
+    }, FRAME*1000);
+  };
+  ws.onmessage = handleMessage;
+  attachCommonHandlers();
+  ws.onclose = () => {
+    if(timer){ clearInterval(timer); timer = null; }
+    $("stop").disabled = true; $("file").disabled = false;
+    $("mic").disabled = false;
+    document.querySelectorAll("#clips button").forEach(b=>b.disabled=false);
+  };
+}
+
+// One handler for both the clip path and the live-mic path. Duplicating it was
+// the first version's mistake: the mic path referenced a handleMessage that did
+// not exist, so a live call would have thrown on its first frame -- and the only
+// symptom in the browser would have been a silent console error.
+function handleMessage(e){
+    const s = JSON.parse(e.data);
+    // Structured refusals from the gateway. Each has its own remedy, and
+    // collapsing them into "connection error" is how a demo dies on stage with
+    // nobody able to say why.
+    if(s.error){
+      const help = {
+        "unauthorized": "Server requires a token. Open this page with ?token=… " +
+                        "or set localStorage vericall_token.",
+        "invalid call_id": "Call id rejected by the gateway (charset/length).",
+        "call_id already active": "That call id is already streaming.",
+        "at capacity": `Server is full (${s.active}/${s.limit} calls).`,
+        "per-client limit": `This client already holds ${s.limit_per_client} ` +
+                            "calls, the fair-share cap.",
+        "draining": "Server is shutting down; reconnect to another replica.",
+        "models not loaded": "Server is still loading models — wait and retry.",
+        "frame too large": "Audio frame exceeded the server limit."
+      }[s.error];
+      setConn(s.error, true);
+      warn(help || s.error);
+      return;
+    }
+    if(s.warning){ warn(`${s.warning}: ${s.detail||""}`); return; }
+    if(s.state === "ready"){
+      if(s.calibrated === false)
+        warn("Server reports NOT CALIBRATED — branch outputs are raw logits, not LLRs. Risk numbers are not meaningful.");
+      else warn(null);
+      if((s.notes||[]).length) warn(s.notes.join(" · "));
+      return;
+    }
+    render(s);
+}
+
+function attachCommonHandlers(){
+  ws.onerror = () => {
+    setConn("connection error", true);
+    warn("Could not reach the gateway at " + ORIGIN + ". Check it is running " +
+         "(scripts/serve.sh) and that the port-forward is up.");
+  };
+}
+
+// ---------------------------------------------------------------- live mic
+//
+// The demo previously could only replay bundled clips. Live capture is what
+// makes it a detector rather than a playback, and it is the same wire format
+// either way: 16 kHz mono int16, 0.5 s per frame.
+//
+// Two things the browser does NOT give us for free and that matter here:
+//
+//   * getUserMedia hands back whatever the device runs at (commonly 48 kHz),
+//     so the audio is resampled to 16 kHz before it is sent. Sending 48 kHz
+//     samples to a model trained at 16 kHz does not error -- it silently
+//     scores audio that sounds three times too fast.
+//   * the browser's own voice processing (echo cancellation, noise
+//     suppression, AGC) is a de-facto codec applied before we see anything.
+//     It is disabled, because the calibration buckets are fitted against known
+//     channels and a browser's proprietary cleanup is not one of them.
+let micStream = null, micCtx = null, micNode = null;
+
+async function startMic(){
+  if(ws) stop();
+  let stream;
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({audio:{
+      channelCount: 1,
+      echoCancellation: false,
+      noiseSuppression: false,
+      autoGainControl: false,
+    }});
+  }catch(err){
+    warn("Microphone denied or unavailable: " + err.name +
+         ". A live demo needs permission, and the page must be on https:// " +
+         "or localhost — browsers block getUserMedia elsewhere.");
+    return;
+  }
+  micStream = stream;
+  micCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = micCtx.createMediaStreamSource(stream);
+
+  reset();
+  $("alert").classList.remove("on");
+  $("mic").disabled = true; $("file").disabled = true; $("stop").disabled = false;
+  document.querySelectorAll("#clips button").forEach(b=>b.disabled=true);
+  $("srcnote").textContent =
+    `live microphone — capturing at ${micCtx.sampleRate} Hz, sent as ${SR} Hz`;
+
+  const id = "live-" + Date.now().toString(36);
+  const token = new URLSearchParams(location.search).get("token")
+              || localStorage.getItem("vericall_token") || "";
+  const q = token ? `?token=${encodeURIComponent(token)}` : "";
+  ws = new WebSocket(`${WSBASE}/ws/${id}${q}`);
+  ws.binaryType = "arraybuffer";
+  ws.onmessage = handleMessage;
+  ws.onerror = () => { setConn("connection error", true);
+    warn("Could not reach the gateway at " + ORIGIN + "."); };
+  ws.onclose = () => stopMic(true);
+
+  // ScriptProcessor rather than AudioWorklet: it is deprecated but works
+  // without serving a separate module file, which this single-page demo has no
+  // way to do. The buffer is 4096 frames (~85 ms at 48 kHz) -- small enough
+  // that latency is dominated by the detector, not the capture.
+  const BUF = 4096;
+  micNode = micCtx.createScriptProcessor(BUF, 1, 1);
+  const ratio = micCtx.sampleRate / SR;
+  let carry = [];
+
+  micNode.onaudioprocess = e => {
+    if(!ws || ws.readyState !== 1) return;
+    const input = e.inputBuffer.getChannelData(0);
+    // Linear-interpolation resample. Good enough at these ratios and, unlike
+    // naive decimation, it does not alias the high band the detector reads.
+    const outLen = Math.floor(input.length / ratio);
+    for(let i=0;i<outLen;i++){
+      const pos = i * ratio, i0 = Math.floor(pos), frac = pos - i0;
+      const a = input[i0], b = input[Math.min(i0+1, input.length-1)];
+      carry.push(a + (b - a) * frac);
+    }
+    const step = SR * FRAME;
+    while(carry.length >= step){
+      const slice = carry.splice(0, step);
+      const pcm16 = new Int16Array(step);
+      for(let k=0;k<step;k++){
+        const v = Math.max(-1, Math.min(1, slice[k]));
+        pcm16[k] = v < 0 ? v*0x8000 : v*0x7fff;
+      }
+      if(ws && ws.readyState===1) ws.send(pcm16.buffer);
+    }
+  };
+  src.connect(micNode);
+  // ScriptProcessor only fires while connected to a destination. A zero-gain
+  // node keeps it running without putting the microphone through the speakers,
+  // which would howl.
+  const mute = micCtx.createGain(); mute.gain.value = 0;
+  micNode.connect(mute); mute.connect(micCtx.destination);
+  setConn("live — " + id);
+}
+
+function stopMic(fromClose){
+  if(micNode){ micNode.disconnect(); micNode.onaudioprocess = null; micNode = null; }
+  if(micStream){ micStream.getTracks().forEach(t=>t.stop()); micStream = null; }
+  if(micCtx){ micCtx.close().catch(()=>{}); micCtx = null; }
+  $("mic").disabled = false; $("file").disabled = false; $("stop").disabled = true;
+  document.querySelectorAll("#clips button").forEach(b=>b.disabled=false);
+  if(!fromClose && ws){ try{ ws.close(); }catch(e){} ws = null; }
+}
+
+// ---------------------------------------------------------------- history
+//
+// The point of the database is that a call can be reviewed after it ends. A
+// table nobody can read is a table nobody trusts, so it is surfaced here --
+// and clicking a row shows the TIER TRANSITIONS, which is what actually
+// explains a decision. The per-chunk scores are deliberately not stored: at
+// 2 Hz across 64 calls that is 128 near-identical rows a second, and the
+// transitions are what a reviewer reads.
+async function loadHistory(){
+  try{
+    const only = $("honly").checked ? "?alerted_only=true" : "";
+    const r = await fetch(`${ORIGIN}/api/calls${only}`);
+    const d = await r.json();
+    if(d.error){ $("hstats").textContent = d.error; return; }
+    const st = d.stats || {};
+    $("hstats").textContent =
+      `${st.calls||0} calls · ${st.alerted||0} alerted (${((st.alert_rate||0)*100).toFixed(1)}%) · ${st.events||0} transitions`;
+    if(!d.calls.length){ $("hbody").innerHTML =
+      '<span class="trend">No calls recorded yet.</span>'; return; }
+    $("hbody").innerHTML =
+      '<table style="width:100%;border-collapse:collapse">' +
+      '<tr style="text-align:left;color:var(--dim)">' +
+      '<th>call</th><th>when</th><th>tier</th><th>peak risk</th><th>alert</th>' +
+      // Two different actions exist. The tier action is the detector's
+      // tiered response; the prevention action is the cost-optimal
+      // decision for what the caller was attempting. This table used to
+      // head the prevention column "action", which made it look like it
+      // disagreed with the live banner. Both are shown, both are named.
+      '<th>tier action</th><th>prevention</th></tr>' +
+      d.calls.map(c => {
+        const when = new Date(c.started_at*1000).toLocaleTimeString();
+        const risk = c.max_risk === null ? "—" : (c.max_risk>=0?"+":"") + c.max_risk.toFixed(1);
+        const col = c.alerted ? "var(--bad)" : "var(--dim)";
+        return `<tr style="border-top:1px solid #1e2430;cursor:pointer" data-id="${c.call_id}">
+          <td style="padding:4px 0;font-family:ui-monospace">${c.call_id}</td>
+          <td>${when}</td><td>${c.final_tier ?? 0}</td>
+          <td style="font-family:ui-monospace">${risk}</td>
+          <td style="color:${col}">${c.alerted ? (c.alert_at||0).toFixed(1)+"s" : "—"}</td>
+          <td>${ACTIONS[c.final_tier ?? 0] || "—"}</td>
+          <td>${c.final_prevention_action || c.final_action || "—"}</td></tr>`;
+      }).join("") + "</table>";
+    document.querySelectorAll("#hbody tr[data-id]").forEach(tr => {
+      tr.onclick = () => showTimeline(tr.dataset.id);
+    });
+  }catch(err){
+    $("hstats").textContent = "history unavailable: " + err.message;
+  }
+}
+
+async function showTimeline(id){
+  try{
+    const r = await fetch(`${ORIGIN}/api/calls/${encodeURIComponent(id)}`);
+    const d = await r.json();
+    if(d.error){ $("htimeline").textContent = d.error; return; }
+    const evs = d.events || [];
+    $("htimeline").innerHTML =
+      `<div class="trend" style="margin-bottom:6px">Timeline — ${d.call_id}
+       · channel ${d.channel||"?"} · branches ${(d.branches||[]).join("/")}</div>` +
+      (evs.length
+        ? evs.map(e => `<div style="font-family:ui-monospace;font-size:11px">
+            t=${e.at.toFixed(1)}s &nbsp;<b>${e.kind}</b> &nbsp;tier ${e.tier}
+            &nbsp;risk ${(e.risk>=0?"+":"")}${e.risk.toFixed(2)} nats
+            ${e.detail ? "&nbsp;" + JSON.stringify(e.detail) : ""}</div>`).join("")
+        : '<span class="trend">No tier transitions — the call never left tier 0.</span>');
+  }catch(err){
+    $("htimeline").textContent = "could not load timeline: " + err.message;
+  }
+}
+
+$("hrefresh").onclick = loadHistory;
+$("honly").onchange = loadHistory;
+loadHistory();
+
+$("mic").onclick = startMic;
+$("stop").onclick = stop;
+$("file").onchange = async e => {
+  const f = e.target.files[0]; if(!f) return;
+  start(f.name, await toMono16k(await f.arrayBuffer()));
+};
+
+// built-in real clips, exported from ASVspoof by scripts/export_demo_clips.py
+fetch("/static/demo/manifest.json").then(r=>r.ok?r.json():null).then(m=>{
+  if(!m) { $("clips").innerHTML = "<span class='sub'>no bundled clips — use the file picker</span>"; return; }
+  const label = {"genuine.wav":"Genuine","spoofed.wav":"Cloned","midcall_swap.wav":"Mid-call swap"};
+  $("clips").innerHTML = m.clips.map(c =>
+    `<button data-f="${c.file}">${label[c.file]||c.file} <span style="opacity:.7">${c.seconds}s</span></button>`).join("");
+  $("clips").querySelectorAll("button").forEach(btn => btn.onclick = async () => {
+    const f = btn.dataset.f;
+    const buf = await (await fetch("/static/demo/"+f)).arrayBuffer();
+    start(f, await toMono16k(buf));
+  });
+}).catch(()=>{});
+</script>

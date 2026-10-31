@@ -1,0 +1,9 @@
+{
+  "fitted_for": {
+    "A": "branch_A_rtc_seed0.pt",
+    "A2": "branch_A2_rtc_seed0.pt"
+  },
+  "dataset": "rtcfake",
+  "fold": "calib",
+  "rows": 3512
+}

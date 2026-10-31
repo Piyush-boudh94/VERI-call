@@ -1,0 +1,79 @@
+{
+  "_README": [
+    "Deployment profiles. One profile = one trained head set + the calibration",
+    "fitted FOR those heads. They travel together and must never be mixed: a",
+    "Platt mapping describes one model, so serving profile X's heads under",
+    "profile Y's calibration produces confident numbers that mean nothing.",
+    "",
+    "Selected with VERICALL_PROFILE=<id>, or run_local.py --profile <id>.",
+    "An explicit VERICALL_CALIB_DIR / VERICALL_CKPT_A / VERICALL_CKPT_A2 still",
+    "wins over the profile, so existing setups are unaffected.",
+    "",
+    "TO ADD A LANGUAGE: build the paired corpus, train, fit calibration, then",
+    "add an entry here. No code change is required -- see",
+    "docs/ADDING_A_LANGUAGE.md. `status` must stay \"experimental\" until a",
+    "calibration profile exists, because an uncalibrated head cannot produce",
+    "a trustworthy likelihood ratio and the gateway will refuse to serve it."
+  ],
+  "default": "hindi-telephony",
+  "profiles": {
+    "baseline": {
+      "display": "Baseline (English / ASVspoof)",
+      "languages": ["english"],
+      "calib_dir": "calib",
+      "ckpt_a": "branch_A_seed0.pt",
+      "ckpt_a2": "branch_A2_seed0.pt",
+      "status": "ready",
+      "measured": {"asvspoof_eval_eer": 0.1101, "wavefake_unseen_eer": 0.3029},
+      "note": "The original heads. Scores 42.29% on Hindi -- do not use it for Indian languages."
+    },
+    "rtc": {
+      "display": "WebRTC / RTCFake (English + Mandarin)",
+      "languages": ["english", "mandarin"],
+      "calib_dir": "calib_rtc",
+      "ckpt_a": "branch_A_rtc_seed0.pt",
+      "ckpt_a2": "branch_A2_rtc_seed0.pt",
+      "status": "ready",
+      "measured": {"rtcfake_en_eer": 0.2293, "rtcfake_zh_eer": 0.3334},
+      "note": "Trained on transmitted audio. Removed the Mandarin score inversion."
+    },
+    "hindi-clean": {
+      "display": "Hindi, clean wideband only",
+      "languages": ["hindi"],
+      "calib_dir": "calib_hindi",
+      "ckpt_a": "branch_Ahindi_seed0.pt",
+      "ckpt_a2": "branch_A2hindi_seed0.pt",
+      "status": "ready",
+      "measured": {"clean_eer": 0.0788},
+      "note": "Better on clean audio and has NO telephony bucket: a G.711 call falls back to a wideband mapping. Use hindi-telephony unless the audio really is clean."
+    },
+    "hindi-telephony": {
+      "display": "Hindi over telephony (recommended)",
+      "languages": ["hindi"],
+      "calib_dir": "calib_hindi_ch",
+      "ckpt_a": "branch_Ahindich_seed0.pt",
+      "ckpt_a2": "branch_A2hindich_seed0.pt",
+      "status": "ready",
+      "measured": {
+        "clean_eer": 0.0924, "g711_eer": 0.1393, "noisy_line_eer": 0.2321,
+        "fused_roc_auc": 0.9539,
+        "fused_recall_at_fpr5": 0.705
+      },
+      "note": "The demo default. Calibrated per channel, so a telephone call is scored by a mapping fitted on telephone audio."
+    },
+    "indic5": {
+      "display": "Five Indian languages, pooled (NOT SERVABLE YET)",
+      "languages": ["hindi", "bengali", "marathi", "tamil", "telugu"],
+      "calib_dir": null,
+      "ckpt_a": "branch_Aindic5_seed0.pt",
+      "ckpt_a2": null,
+      "status": "experimental",
+      "measured": {
+        "hindi_eer": 0.0830, "bengali_eer": 0.0679, "marathi_eer": 0.0140,
+        "tamil_eer": 0.0192, "telugu_eer": 0.0074,
+        "gujarati_unseen_eer": 0.0685
+      },
+      "note": "The head is trained and measured -- including 6.85% on Gujarati, a language it never saw. It is NOT servable: no calibration profile has been fitted for it and there is no A2 counterpart, so it has no likelihood-ratio scale. Fitting those is the next step, and the corpora it needs were lost to a namespace wipe. This entry exists so the slot is defined."
+    }
+  }
+}

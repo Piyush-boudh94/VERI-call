@@ -1,0 +1,39 @@
+{
+  "per_window_accuracy": 0.942,
+  "per_call_accuracy": 0.9879924953095685,
+  "windows_per_call": 6,
+  "stats": {
+    "clean": {
+      "n": 4000,
+      "high_band_median": 0.0042565878840047115,
+      "const_frame_p95": 0.0,
+      "noise_floor_median": 0.033051917514699186
+    },
+    "g711": {
+      "n": 8000,
+      "high_band_median": 9.961567081266994e-05,
+      "const_frame_p95": 0.0,
+      "noise_floor_median": 0.05468997063512508
+    },
+    "noisy_line": {
+      "n": 4000,
+      "high_band_median": 0.015400418138931981,
+      "const_frame_p95": 0.05999999865889549,
+      "noise_floor_median": 0.38895817379642483
+    }
+  },
+  "per_bucket_call": {
+    "clean": {
+      "ok": 666,
+      "n": 666
+    },
+    "g711": {
+      "ok": 1302,
+      "n": 1333
+    },
+    "noisy_line": {
+      "ok": 665,
+      "n": 666
+    }
+  }
+}

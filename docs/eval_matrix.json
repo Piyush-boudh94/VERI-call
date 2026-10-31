@@ -1,0 +1,22 @@
+{
+  "checkpoints/branch_Aindic5_seed0.pt": {
+    "telugu_paired:eval_hindi": {
+      "eer": 0.007352941176470562,
+      "ci95": [
+        0.004199660633484163,
+        0.013405257936507892
+      ],
+      "n": 2072,
+      "inverted": false
+    },
+    "telugu_paired_unmatched:eval_hindi": {
+      "eer": 0.014705882352941124,
+      "ci95": [
+        0.007832988267770877,
+        0.02020101799284559
+      ],
+      "n": 2072,
+      "inverted": false
+    }
+  }
+}

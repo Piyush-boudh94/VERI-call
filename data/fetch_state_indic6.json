@@ -1,0 +1,58 @@
+{
+  "kathbath_valid": {
+    "status": "complete",
+    "bytes": 3590031360,
+    "total": 3590031360,
+    "updated": "2026-10-31 08:09:51",
+    "path": "/scratch/vericall-data/kathbath_valid.tar",
+    "sha256": "691c45ee6297d155664d104d732066e5701418f3f9950330fc416d24fd1fd43e"
+  },
+  "indicsynth_kn": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_kn",
+    "updated": "2026-10-31 08:13:16",
+    "bytes": 8028858662,
+    "files": 39
+  },
+  "indicsynth_ml": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_ml",
+    "updated": "2026-10-31 08:16:05",
+    "bytes": 8188980478,
+    "files": 39
+  },
+  "indicsynth_or": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_or",
+    "updated": "2026-10-31 08:18:57",
+    "bytes": 8264260750,
+    "files": 42
+  },
+  "indicsynth_pa": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_pa",
+    "updated": "2026-10-31 08:21:33",
+    "bytes": 8437440852,
+    "files": 39
+  },
+  "indicsynth_sa": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_sa",
+    "updated": "2026-10-31 08:23:15",
+    "bytes": 4744098103,
+    "files": 39
+  },
+  "indicsynth_ur": {
+    "status": "complete",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/scratch/vericall-data/indicsynth_ur",
+    "updated": "2026-10-31 08:26:05",
+    "bytes": 9289146901,
+    "files": 42
+  }
+}

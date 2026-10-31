@@ -1,0 +1,15 @@
+{
+  "A2@clean.json": "b84383d049fe277071e46efc9cef0a6edac754e7baca3483ed7b6a43763b632c",
+  "A2@pooled.json": "dd414f421065ff82d2c03fcc3c3c643251f03b46d1809312c7bfd55f174af6c4",
+  "A2_channels.json": "a8c38b52525bce8de2a35a4a714f199fed1c93fac3a757582beaee35c7c18a90",
+  "A@clean.json": "73dccafbc74b4dcf28a4ec37d0a15ba34d375b05a1dc20f05f77eed8fd41d3c0",
+  "A@pooled.json": "1f2431c33212e4231b26ccc8fdc02a83d2edcb8292f2cd341f28c8f508b0aa1b",
+  "B_bonafide_cohort.npy": "82aefdf8c6c164e6fc6db2dacf7aadf5f307d963ad8ed02991bb836e85902708",
+  "C@asv.json": "a64fb7e20913ba81d006f630dd6152a5c7ed428b1b522632404e2995ae225e59",
+  "C_cohort.npy": "7e9d6e20ca5334ca6cda9d8ddb0b78b0fe7aa6c32dfca03909b5e8c9886d2b5a",
+  "C_summary.json": "e9508c0781d9547147b7e216c3122b059ed2a3202375cd784b2b428e321cddf2",
+  "provenance.json": "e50a8304ba000bb742f30a4dd3522f6f50a82ca1fe59613978a96612a6a90a79",
+  "subsets.json": "d91a668286e4d248e3f854225ddb022b045030c423b9ac90b645c2a7d5159892",
+  "summary.json": "4e31c4d13f5ef528f368db1d9fd22eb85d437ed0e60d2b64f018a84db57b0597",
+  "weights.json": "d18b53a1813043e0c4831f16f65ba4ad59949137e9ec48b9c2eada040de3e572"
+}

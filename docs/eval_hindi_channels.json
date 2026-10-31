@@ -1,0 +1,24 @@
+{
+  "checkpoints/branch_Ahindich_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.1304159445407279,
+      "ci95": [
+        0.11796763906683369,
+        0.14159514487712543
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_Ahindi_seed0.pt": {
+    "hindi_paired:eval_hindi": {
+      "eer": 0.17723214285714287,
+      "ci95": [
+        0.16622178819444444,
+        0.18940565448297408
+      ],
+      "n": 4548,
+      "inverted": false
+    }
+  }
+}

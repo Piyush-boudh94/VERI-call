@@ -1,0 +1,57 @@
+{
+  "checkpoints/branch_A_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.26976597090449084,
+      "ci95": [
+        0.2574877682225734,
+        0.28303819166425925
+      ],
+      "n": 4743,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_rtc_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.4912211825775917,
+      "ci95": [
+        0.47677271314381864,
+        0.5060000776463173
+      ],
+      "n": 4743,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_mix_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.27514231499051234,
+      "ci95": [
+        0.2619927743246129,
+        0.2892349861389901
+      ],
+      "n": 4743,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_dann_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.28969006957621757,
+      "ci95": [
+        0.2743254620954657,
+        0.30449987746022733
+      ],
+      "n": 4743,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_Ahindich_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.5100914265999654,
+      "ci95": [
+        0.4956892601847084,
+        0.52116946614789
+      ],
+      "n": 4743,
+      "inverted": true
+    }
+  }
+}

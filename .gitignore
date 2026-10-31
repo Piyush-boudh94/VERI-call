@@ -1,0 +1,44 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+data/manifests/
+data/splits/
+# Feature caches are regenerable and huge. Calibration cohorts are neither:
+# they are fitted artifacts the served system loads at startup, they are sealed
+# in each profile's MANIFEST.sha256, and a blanket *.npy silently dropped them
+# from every clone -- which disabled Branch B (llr 0.0 for the whole branch, no
+# warning) in any fresh checkout.
+#
+# The negation covers calib* and not just calib/, because the first fix said
+# `!calib/*.npy` and then two new profiles -- calib_hindi/ and calib_hindi_ch/
+# -- reintroduced the identical bug: cohorts present on disk, absent from the
+# clone, and the Hindi profile refusing to verify. Caught by the export gate,
+# which is the only reason it was caught at all. Any future calib_<name>/ is
+# covered now.
+*.npy
+!calib*/*.npy
+.scratch/
+logs/vericall.db*
+
+# Enrolled voiceprints. NEVER commit these.
+#
+# An ECAPA embedding is biometric personal data under the DPDP Act 2023 and
+# GDPR Art. 9. It is not anonymous -- identifying the speaker is its entire
+# function -- so it carries a lawful basis, a retention period and a right to
+# erasure, none of which survive being pushed to a git remote where deletion
+# is not actually deletion. This is runtime state, not a project artifact.
+enroll/
+
+# Self-signed TLS material for the local demo. NEVER commit a private key,
+# even a throwaway one: it gets copied into other projects, and a key in git
+# history is a key you cannot un-publish. Regenerated on demand by
+# `run_local.py --tls`.
+.tls/
+
+# The paired Hindi corpus (1.2 GB of derived wav). Lives on NFS so the GPU
+# pod can read it -- the pod and the head node share only /home, and the head
+# node /tmp has been wiped 12+ times. Regenerate with
+# scripts/build_hindi_paired.py; too large for git.
+corpora/

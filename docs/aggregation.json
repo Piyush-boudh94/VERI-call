@@ -1,0 +1,178 @@
+[
+  {
+    "threshold": 0.0,
+    "n": 3,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.03151143335192415,
+    "predicted_call_fp_binomial": 0.00029829578147270124,
+    "empirical_call_fp": 0.003219575016097875,
+    "inflation": 10.793230129513303,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 0.0,
+    "n": 2,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.03151143335192415,
+    "predicted_call_fp_binomial": 0.009318571461538574,
+    "empirical_call_fp": 0.025756600128783,
+    "inflation": 2.764007362618902,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 0.0,
+    "n": 4,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.03151143335192415,
+    "predicted_call_fp_binomial": 4.805671525265776e-06,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 0.0,
+    "n": 5,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.03151143335192415,
+    "predicted_call_fp_binomial": 3.1069966950167793e-08,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 1.0,
+    "n": 3,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.022030117122141663,
+    "predicted_call_fp_binomial": 0.00010341591278576997,
+    "empirical_call_fp": 0.0009658725048293626,
+    "inflation": 9.339689403798085,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 1.0,
+    "n": 2,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.022030117122141663,
+    "predicted_call_fp_binomial": 0.004642937169841855,
+    "empirical_call_fp": 0.01674179008370895,
+    "inflation": 3.6058618652983405,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 1.0,
+    "n": 4,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.022030117122141663,
+    "predicted_call_fp_binomial": 1.1569509074036377e-06,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 1.0,
+    "n": 5,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.022030117122141663,
+    "predicted_call_fp_binomial": 5.189004296859735e-09,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 2.0,
+    "n": 3,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.01784718349135527,
+    "predicted_call_fp_binomial": 5.533621908415636e-05,
+    "empirical_call_fp": 0.0009658725048293626,
+    "inflation": 17.454616900378493,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 2.0,
+    "n": 2,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.01784718349135527,
+    "predicted_call_fp_binomial": 0.0030730397896661017,
+    "empirical_call_fp": 0.012556342562781713,
+    "inflation": 4.085968103961977,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 2.0,
+    "n": 4,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.01784718349135527,
+    "predicted_call_fp_binomial": 5.000383580789999e-07,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 2.0,
+    "n": 5,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.01784718349135527,
+    "predicted_call_fp_binomial": 1.810708097604164e-09,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 3.0,
+    "n": 3,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.012269938650306749,
+    "predicted_call_fp_binomial": 1.8134246546588463e-05,
+    "empirical_call_fp": 0.0003219575016097875,
+    "inflation": 17.754115164512104,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 3.0,
+    "n": 2,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.012269938650306749,
+    "predicted_call_fp_binomial": 0.001468907690750213,
+    "empirical_call_fp": 0.007405022537025113,
+    "inflation": 5.041176231600473,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 3.0,
+    "n": 4,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.012269938650306749,
+    "predicted_call_fp_binomial": 1.1221618381051505e-07,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  },
+  {
+    "threshold": 3.0,
+    "n": 5,
+    "m": 5,
+    "eta": 0.08002543056732446,
+    "chunk_fp_rate": 0.012269938650306749,
+    "predicted_call_fp_binomial": 2.781070230743868e-10,
+    "empirical_call_fp": 0.0,
+    "inflation": 0.0,
+    "effective_m": 0.4001271528366223
+  }
+]

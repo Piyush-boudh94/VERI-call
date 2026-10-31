@@ -1,0 +1,26 @@
+{
+  "echofake": {
+    "status": "complete",
+    "repo": "EchoFake/EchoFake",
+    "path": "/tmp/vericall-data/echofake",
+    "updated": "2026-09-04 11:01:20",
+    "attempt": 3,
+    "error": "Got: ConnectError: [Errno -5] No address associated with hostname\nAn error happened while trying to locate the files on the Hub, and we cannot find the appropriate snapshot folder for the specified re",
+    "bytes": 3263832125,
+    "files": 36
+  },
+  "codecfake": {
+    "status": "complete",
+    "repo": "ajaykarthick/codecfake-audio",
+    "path": "/tmp/vericall-data/codecfake",
+    "updated": "2026-09-04 11:19:34",
+    "bytes": 18398048086,
+    "files": 1149
+  },
+  "indicsynth": {
+    "status": "downloading",
+    "repo": "vdivyasharma/IndicSynth",
+    "path": "/tmp/vericall-data/indicsynth",
+    "updated": "2026-09-04 11:19:34"
+  }
+}

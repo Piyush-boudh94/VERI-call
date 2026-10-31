@@ -1,0 +1,23 @@
+{
+  "hindi_genuine": {
+    "speaker": "hi_662",
+    "label": "bona fide",
+    "generator": "-",
+    "seconds": 20.0,
+    "source": "Kathbath (real) / IndicSynth (clone), eval_hindi fold"
+  },
+  "hindi_clone_vc": {
+    "speaker": "hi_229",
+    "label": "spoof",
+    "generator": "freevc24",
+    "seconds": 18.7,
+    "source": "Kathbath (real) / IndicSynth (clone), eval_hindi fold"
+  },
+  "hindi_clone_tts": {
+    "speaker": "hi_662",
+    "label": "spoof",
+    "generator": "xtts_v2",
+    "seconds": 20.0,
+    "source": "Kathbath (real) / IndicSynth (clone), eval_hindi fold"
+  }
+}

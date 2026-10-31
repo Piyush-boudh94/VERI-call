@@ -1,0 +1,42 @@
+{
+  "checkpoints/branch_Acodec_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.16382036685641999,
+      "ci95": [
+        0.1535929139917308,
+        0.17379396069083866
+      ],
+      "n": 4743,
+      "inverted": false
+    },
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.10133333333333333,
+      "ci95": [
+        0.09353763897006226,
+        0.10865653814568821
+      ],
+      "n": 6000,
+      "inverted": false
+    }
+  },
+  "checkpoints/branch_A_seed0.pt": {
+    "codecfake:eval_unseen_codec": {
+      "eer": 0.26976597090449084,
+      "ci95": [
+        0.2574877682225734,
+        0.28303819166425925
+      ],
+      "n": 4743,
+      "inverted": false
+    },
+    "asvspoof2019_la:eval_in_domain": {
+      "eer": 0.11233333333333329,
+      "ci95": [
+        0.10372577092844965,
+        0.12227232477306595
+      ],
+      "n": 6000,
+      "inverted": false
+    }
+  }
+}
