@@ -82,3 +82,10 @@ Feature extraction needs torch; run the full suite in the GPU pod:
 VeriCall is a **co-tenant** of the `wmamba-dev` pod, which holds the entire
 namespace quota. It never creates, modifies or restarts that Deployment.
 See `docs/ENVIRONMENT.md`.
+
+### Vercel
+
+Vercel is configured as a static dashboard deployment in `vercel.json`. The
+GPU-backed FastAPI gateway and its WebSocket endpoints must run on a
+long-running Python host; serverless Vercel Functions cannot package or serve
+the detector runtime.
